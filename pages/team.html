@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Das REKONKI Projektteam – Wissenschaftlerinnen und Wissenschaftler aus Informatik, Kunstgeschichte und Denkmalpflege." />
+  <title>Projektteam – REKONKI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    .page-hero {
+      background: linear-gradient(135deg, var(--teal) 0%, #2a4042 100%);
+      padding: 5rem 0 4rem;
+      text-align: center;
+      margin-top: 0;
+    }
+    .page-hero h1 { color: var(--white); font-size: clamp(2rem,5vw,3.5rem); font-weight: 900; }
+    .page-hero p { color: var(--sand); margin-top: 0.75rem; font-size: 1rem; }
+    .breadcrumb { font-size: 0.78rem; color: rgba(217,204,196,0.5); margin-bottom: 1.5rem; }
+    .breadcrumb a { color: var(--gold); text-decoration: none; }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    .team-card {
+      background: var(--white);
+      border: 1px solid rgba(217,204,196,0.5);
+      border-radius: 6px;
+      overflow: hidden;
+      text-align: center;
+      transition: box-shadow 0.25s, transform 0.25s;
+    }
+    .team-card:hover { box-shadow: 0 12px 40px rgba(55,83,87,0.15); transform: translateY(-4px); }
+    .team-card-img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      filter: grayscale(30%);
+    }
+    .team-card-body { padding: 1.5rem; }
+    .team-card h3 { font-size: 1rem; font-weight: 700; color: var(--dark); margin-bottom: 0.25rem; }
+    .team-role {
+      font-size: 0.78rem;
+      color: var(--teal);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+    .team-card p { font-size: 0.85rem; color: #777; line-height: 1.6; }
+  </style>
+</head>
+<body>
+
+<nav id="main-nav" role="navigation" aria-label="Hauptnavigation">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo" aria-label="REKONKI Startseite">
+      <svg width="42" height="42" viewBox="0 0 100 120" fill="none" aria-hidden="true">
+        <path d="M50 5 L95 25 L95 70 C95 90 70 110 50 118 C30 110 5 90 5 70 L5 25 Z" fill="#375357" stroke="#E9A753" stroke-width="2"/>
+        <circle cx="50" cy="62" r="12" fill="none" stroke="#E9A753" stroke-width="1.5"/>
+        <line x1="50" y1="20" x2="50" y2="115" stroke="rgba(217,204,196,0.3)" stroke-width="1"/>
+        <line x1="8" y1="62" x2="92" y2="62" stroke="rgba(217,204,196,0.3)" stroke-width="1"/>
+      </svg>
+      <span class="nav-logo-text">REKONKI</span>
+    </a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="../index.html">Startseite</a></li>
+      <li class="nav-dropdown"><a href="#">Über uns</a>
+        <ul class="dropdown-menu">
+          <li><a href="team.html">Projektteam</a></li>
+          <li><a href="partner.html">Projektpartner</a></li>
+          <li><a href="traeger.html">Projektträger</a></li>
+          <li><a href="entwicklung.html">Projektentwicklung</a></li>
+        </ul>
+      </li>
+      <li class="nav-dropdown"><a href="#">Aktuelles</a>
+        <ul class="dropdown-menu">
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="veranstaltungen.html">Veranstaltungen</a></li>
+        </ul>
+      </li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+    </ul>
+    <button class="burger" id="burger" aria-label="Menü öffnen"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<header class="page-hero">
+  <div class="container">
+    <p class="breadcrumb"><a href="../index.html">Startseite</a> › Über uns › Projektteam</p>
+    <h1>Projektteam</h1>
+    <p>Wissenschaftlerinnen und Wissenschaftler aus Informatik, Kunstgeschichte und Denkmalpflege</p>
+  </div>
+</header>
+
+<section>
+  <div class="container">
+    <div class="reveal" style="text-align:center; max-width:640px; margin:0 auto;">
+      <p class="section-label">Unser Team</p>
+      <h2 class="section-title">Die Menschen hinter REKONKI</h2>
+      <div class="divider-accent" style="margin:1rem auto;"></div>
+      <p class="section-intro">Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+         Unser interdisziplinäres Team verbindet technische Exzellenz mit historischem Sachverstand.</p>
+    </div>
+
+    <div class="team-grid">
+      <article class="team-card reveal">
+        <img class="team-card-img"
+          src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=400&q=70"
+          alt="Portraitfoto Projektleiterin" loading="lazy" />
+        <div class="team-card-body">
+          <div class="team-role">Projektleitung</div>
+          <h3>Prof. Dr. Musterfrau</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+             Spezialisierung auf KI-gestützte Bildanalyse und digitales Kulturerbe.</p>
+        </div>
+      </article>
+      <article class="team-card reveal">
+        <img class="team-card-img"
+          src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&q=70"
+          alt="Portraitfoto Wissenschaftlicher Mitarbeiter" loading="lazy" />
+        <div class="team-card-body">
+          <div class="team-role">Wiss. Mitarbeiter</div>
+          <h3>M.Sc. Max Mustermann</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+             Schwerpunkt Machine Learning und 3D-Rekonstruktion.</p>
+        </div>
+      </article>
+      <article class="team-card reveal">
+        <img class="team-card-img"
+          src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&q=70"
+          alt="Portraitfoto Kunsthistorikerin" loading="lazy" />
+        <div class="team-card-body">
+          <div class="team-role">Kunstgeschichte</div>
+          <h3>Dr. Anna Beispiel</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+             Expertise in historischer Bauforschung und Quellenkritik.</p>
+        </div>
+      </article>
+      <article class="team-card reveal">
+        <img class="team-card-img"
+          src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=70"
+          alt="Portraitfoto Softwareentwickler" loading="lazy" />
+        <div class="team-card-body">
+          <div class="team-role">Softwareentwicklung</div>
+          <h3>B.Sc. Jonas Platzhalter</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+             Full-Stack-Entwicklung und API-Integration für die REKONKI-Plattform.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<footer role="contentinfo">
+  <div class="container">
+    <div class="footer-bottom" style="border-top:1px solid rgba(217,204,196,0.12); padding-top:2rem; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1rem;">
+      <p class="footer-copy">&copy; 2026 Projekt REKONKI. Alle Rechte vorbehalten.</p>
+      <ul class="footer-links">
+        <li><a href="impressum.html">Impressum</a></li>
+        <li><a href="datenschutz.html">Datenschutz</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+<script src="../js/main.js"></script>
+</body>
+</html>

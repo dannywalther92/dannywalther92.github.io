@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Projektentwicklung REKONKI – Meilensteine, Zeitplan und Entwicklungsschritte des Forschungsprojekts." />
+  <title>Projektentwicklung – REKONKI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    .page-hero { background: linear-gradient(135deg, var(--teal) 0%, #2a4042 100%); padding: 5rem 0 4rem; text-align: center; }
+    .page-hero h1 { color: var(--white); font-size: clamp(2rem,5vw,3.5rem); font-weight: 900; }
+    .page-hero p { color: var(--sand); margin-top: 0.75rem; }
+    .breadcrumb { font-size: 0.78rem; color: rgba(217,204,196,0.5); margin-bottom: 1.5rem; }
+    .breadcrumb a { color: var(--gold); text-decoration: none; }
+
+    /* Timeline */
+    .timeline { position: relative; padding-left: 2.5rem; margin-top: 3rem; }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--gold), var(--terracotta), var(--teal));
+    }
+    .timeline-item { position: relative; margin-bottom: 3rem; }
+    .timeline-dot {
+      position: absolute;
+      left: -2.95rem;
+      top: 0.2rem;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--gold);
+      border: 3px solid var(--white);
+      box-shadow: 0 0 0 2px var(--gold);
+    }
+    .timeline-dot.done { background: var(--teal); box-shadow: 0 0 0 2px var(--teal); }
+    .timeline-dot.current { background: var(--terracotta); box-shadow: 0 0 0 2px var(--terracotta); animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100%{box-shadow:0 0 0 2px var(--terracotta)} 50%{box-shadow:0 0 0 6px rgba(195,147,125,0.3)} }
+
+    .timeline-date { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--terracotta); margin-bottom: 0.4rem; }
+    .timeline-item h3 { font-size: 1.1rem; font-weight: 700; color: var(--dark); margin-bottom: 0.5rem; }
+    .timeline-item p { font-size: 0.9rem; color: #666; line-height: 1.7; max-width: 640px; }
+    .status-badge {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.2rem 0.6rem;
+      border-radius: 3px;
+      margin-bottom: 0.5rem;
+    }
+    .status-done { background: rgba(55,83,87,0.1); color: var(--teal); }
+    .status-current { background: rgba(195,147,125,0.15); color: var(--terracotta); }
+    .status-planned { background: rgba(217,204,196,0.4); color: #888; }
+  </style>
+</head>
+<body>
+
+<nav id="main-nav" role="navigation" aria-label="Hauptnavigation">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo">
+      <svg width="42" height="42" viewBox="0 0 100 120" fill="none" aria-hidden="true">
+        <path d="M50 5 L95 25 L95 70 C95 90 70 110 50 118 C30 110 5 90 5 70 L5 25 Z" fill="#375357" stroke="#E9A753" stroke-width="2"/>
+        <circle cx="50" cy="62" r="12" fill="none" stroke="#E9A753" stroke-width="1.5"/>
+        <line x1="50" y1="20" x2="50" y2="115" stroke="rgba(217,204,196,0.3)" stroke-width="1"/>
+        <line x1="8" y1="62" x2="92" y2="62" stroke="rgba(217,204,196,0.3)" stroke-width="1"/>
+      </svg>
+      <span class="nav-logo-text">REKONKI</span>
+    </a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="../index.html">Startseite</a></li>
+      <li class="nav-dropdown"><a href="#">Über uns</a>
+        <ul class="dropdown-menu">
+          <li><a href="team.html">Projektteam</a></li>
+          <li><a href="partner.html">Projektpartner</a></li>
+          <li><a href="traeger.html">Projektträger</a></li>
+          <li><a href="entwicklung.html">Projektentwicklung</a></li>
+        </ul>
+      </li>
+      <li class="nav-dropdown"><a href="#">Aktuelles</a>
+        <ul class="dropdown-menu">
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="veranstaltungen.html">Veranstaltungen</a></li>
+        </ul>
+      </li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+    </ul>
+    <button class="burger" id="burger" aria-label="Menü öffnen"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<header class="page-hero">
+  <div class="container">
+    <p class="breadcrumb"><a href="../index.html">Startseite</a> › Über uns › Projektentwicklung</p>
+    <h1>Projektentwicklung</h1>
+    <p>Meilensteine, Zeitplan und Entwicklungsschritte von REKONKI</p>
+  </div>
+</header>
+
+<section>
+  <div class="container">
+    <div class="reveal" style="max-width:680px; margin-bottom:1rem;">
+      <p class="section-label">Zeitplan</p>
+      <h2 class="section-title">Vom Konzept zur KI</h2>
+      <div class="divider-accent"></div>
+      <p class="section-intro">
+        REKONKI folgt einem strukturierten Entwicklungspfad über vier Phasen von 2025 bis 2028. 
+        Jeder Meilenstein baut auf dem vorherigen auf und wird wissenschaftlich dokumentiert.
+      </p>
+    </div>
+
+    <div class="timeline">
+
+      <div class="timeline-item reveal">
+        <div class="timeline-dot done"></div>
+        <p class="timeline-date">Q1 2025 – Q2 2025</p>
+        <span class="status-badge status-done">&#10003; Abgeschlossen</span>
+        <h3>Phase 1: Konzeption &amp; Anforderungsanalyse</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Definition der Forschungsfragen, Erhebung des State of the Art, Auswahl der Pilotobjekte und Aufbau der Projektstruktur. Ergebnis: Pflichtenheft und erster Projektplan.</p>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-dot done"></div>
+        <p class="timeline-date">Q3 2025 – Q4 2025</p>
+        <span class="status-badge status-done">&#10003; Abgeschlossen</span>
+        <h3>Phase 2: Datenerhebung &amp; Kuratierung</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aufbau der Trainingsdatenbasis aus Archivbeständen, Digitalisierung historischer Quellen, Metadaten-Annotation und Qualitätssicherung. Ergebnis: Kuratierter Datensatz mit über 10.000 annotierten Bilddokumenten.</p>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-dot current"></div>
+        <p class="timeline-date">Q1 2026 – Q4 2026</p>
+        <span class="status-badge status-current">● Laufend</span>
+        <h3>Phase 3: KI-Modellentwicklung &amp; Training</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Entwicklung und Training der KI-Architektur, iterative Optimierung anhand historischer Validierungsobjekte, Aufbau der interaktiven Plattform. Ergebnis: Funktionsfähiger Prototyp der Rekonstruktions-KI.</p>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <p class="timeline-date">Q1 2027 – Q4 2027</p>
+        <span class="status-badge status-planned">Geplant</span>
+        <h3>Phase 4: Evaluierung &amp; Pilotanwendung</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Anwendung auf reale Pilotobjekte in Zusammenarbeit mit Denkmalpflegebehörden, wissenschaftliche Evaluation der Ergebnisse, Publikation und öffentliche Präsentation.</p>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <p class="timeline-date">Q1 2028 – Q2 2028</p>
+        <span class="status-badge status-planned">Geplant</span>
+        <h3>Phase 5: Abschluss &amp; Transfer</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Abschlussdokumentation, Open-Source-Veröffentlichung des Datensatzes und der Modelle, Konferenzbeiträge, Übergabe an Anwendungspartner.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer role="contentinfo">
+  <div class="container">
+    <div class="footer-bottom" style="border-top:1px solid rgba(217,204,196,0.12);padding-top:2rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;">
+      <p class="footer-copy">&copy; 2026 Projekt REKONKI. Alle Rechte vorbehalten.</p>
+      <ul class="footer-links">
+        <li><a href="impressum.html">Impressum</a></li>
+        <li><a href="datenschutz.html">Datenschutz</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+<script src="../js/main.js"></script>
+</body>
+</html>

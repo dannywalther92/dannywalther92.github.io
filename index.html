@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Projekt REKONKI – KI-gestützte Rekonstruktion historischer Bauwerke und kulturellen Erbes." />
+  <title>REKONKI – Rekonstruktion mit Künstlicher Intelligenz</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- ╔═══════════════════════════════════════╗ -->
+<!-- ║            NAVIGATION                 ║ -->
+<!-- ╚═══════════════════════════════════════╝ -->
+<nav id="main-nav" role="navigation" aria-label="Hauptnavigation">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo" aria-label="REKONKI Startseite">
+      <!-- Logo SVG inline placeholder (brand shield icon) -->
+      <svg width="42" height="42" viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M50 5 L95 25 L95 70 C95 90 70 110 50 118 C30 110 5 90 5 70 L5 25 Z" fill="#375357" stroke="#E9A753" stroke-width="2"/>
+        <path d="M30 50 L50 30 L70 50" stroke="#E9A753" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="50" cy="65" r="12" fill="none" stroke="#D9CCC4" stroke-width="1.5"/>
+        <line x1="50" y1="30" x2="50" y2="110" stroke="rgba(217,204,196,0.3)" stroke-width="1"/>
+        <line x1="10" y1="65" x2="90" y2="65" stroke="rgba(217,204,196,0.3)" stroke-width="1"/>
+        <line x1="20" y1="35" x2="80" y2="95" stroke="rgba(233,167,83,0.25)" stroke-width="1"/>
+        <line x1="80" y1="35" x2="20" y2="95" stroke="rgba(233,167,83,0.25)" stroke-width="1"/>
+      </svg>
+      <span class="nav-logo-text">REKONKI</span>
+    </a>
+
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Startseite</a></li>
+      <li class="nav-dropdown">
+        <a href="#">Über uns</a>
+        <ul class="dropdown-menu">
+          <li><a href="pages/team.html">Projektteam</a></li>
+          <li><a href="pages/partner.html">Projektpartner</a></li>
+          <li><a href="pages/traeger.html">Projektträger</a></li>
+          <li><a href="pages/entwicklung.html">Projektentwicklung</a></li>
+        </ul>
+      </li>
+      <li class="nav-dropdown">
+        <a href="#">Aktuelles</a>
+        <ul class="dropdown-menu">
+          <li><a href="pages/blog.html">Blog</a></li>
+          <li><a href="pages/veranstaltungen.html">Veranstaltungen</a></li>
+        </ul>
+      </li>
+      <li><a href="pages/kontakt.html">Kontakt</a></li>
+    </ul>
+
+    <button class="burger" id="burger" aria-label="Menü öffnen" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</nav>
+
+
+<!-- ╔═══════════════════════════════════════╗ -->
+<!-- ║              HERO                     ║ -->
+<!-- ╚═══════════════════════════════════════╝ -->
+<section id="hero" aria-label="Willkommensbereich">
+  <div class="hero-content">
+    <div class="hero-badge">Forschungsprojekt · KI & Kulturerbe</div>
+
+    <!-- Logo Icon -->
+    <svg class="hero-logo-img" viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M50 5 L95 25 L95 70 C95 90 70 110 50 118 C30 110 5 90 5 70 L5 25 Z" fill="rgba(55,83,87,0.6)" stroke="#E9A753" stroke-width="2"/>
+      <path d="M25 45 L50 20 L75 45 L75 85 L50 100 L25 85 Z" fill="rgba(195,147,125,0.2)" stroke="#C3937D" stroke-width="1.5"/>
+      <circle cx="50" cy="62" r="15" fill="none" stroke="#E9A753" stroke-width="1.5"/>
+      <circle cx="50" cy="62" r="5" fill="#E9A753"/>
+      <line x1="50" y1="20" x2="50" y2="115" stroke="rgba(217,204,196,0.3)" stroke-width="1"/>
+      <line x1="8" y1="62" x2="92" y2="62" stroke="rgba(217,204,196,0.3)" stroke-width="1"/>
+      <line x1="15" y1="30" x2="85" y2="100" stroke="rgba(233,167,83,0.2)" stroke-width="1"/>
+      <line x1="85" y1="30" x2="15" y2="100" stroke="rgba(233,167,83,0.2)" stroke-width="1"/>
+      <line x1="50" y1="20" x2="25" y2="85" stroke="rgba(217,204,196,0.15)" stroke-width="0.8"/>
+      <line x1="50" y1="20" x2="75" y2="85" stroke="rgba(217,204,196,0.15)" stroke-width="0.8"/>
+    </svg>
+
+    <h1 class="hero-title">PROJEKT <span>REKONKI</span></h1>
+    <p class="hero-sub">Rekonstruktion mit Künstlicher Intelligenz</p>
+
+    <p class="hero-statement">
+      Wir entwickeln KI-gestützte Methoden zur digitalen Rekonstruktion historischer Bauwerke 
+      und kulturellen Erbes – und machen Vergangenes wieder erfahrbar.
+    </p>
+
+    <div class="hero-cta">
+      <a href="#kernfragen" class="btn-primary">Forschung entdecken</a>
+      <a href="pages/team.html" class="btn-secondary">Zum Projektteam</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ╔═══════════════════════════════════════╗ -->
+<!-- ║         PROBLEM-KARUSSELL             ║ -->
+<!-- ╚═══════════════════════════════════════╝ -->
+<section id="challenges" aria-label="Herausforderungen">
+  <div class="container">
+    <div class="reveal">
+      <p class="section-label">Herausforderungen</p>
+      <h2 class="section-title">Die Komplexität der Rekonstruktion</h2>
+    </div>
+
+    <div class="carousel-wrapper reveal">
+      <div class="carousel-track" id="carousel-track" role="list">
+
+        <!-- Slide 1 -->
+        <article class="carousel-slide" role="listitem">
+          <img
+            src="https://images.unsplash.com/photo-1548532928-b34e3be62fc6?w=1400&q=80"
+            alt="Verwitterte historische Architektur – fragmentarischer Zustand eines Baudenkmals"
+            loading="lazy"
+          />
+          <div class="slide-content">
+            <p class="slide-num">Herausforderung 01 / 03</p>
+            <h3>Fragmentarische Überlieferung</h3>
+            <p>
+              Historische Bauwerke sind häufig nur bruchstückhaft erhalten. 
+              Quellenlage, Bildmaterial und archäologische Befunde klaffen weit auseinander – 
+              KI muss diese Lücken intelligent schließen.
+            </p>
+          </div>
+        </article>
+
+        <!-- Slide 2 -->
+        <article class="carousel-slide" role="listitem">
+          <img
+            src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1400&q=80"
+            alt="Digitale 3D-Vermessung und Analyse historischer Strukturen"
+            loading="lazy"
+          />
+          <div class="slide-content">
+            <p class="slide-num">Herausforderung 02 / 03</p>
+            <h3>Heterogene Datenquellen</h3>
+            <p>
+              Skizzen, Fotografien, Archivdokumente und 3D-Scans liegen in völlig 
+              unterschiedlichen Formaten vor. Die Fusion dieser heterogenen Daten 
+              zu einem kohärenten Modell ist eine zentrale Forschungsaufgabe.
+            </p>
+          </div>
+        </article>
+
+        <!-- Slide 3 -->
+        <article class="carousel-slide" role="listitem">
+          <img
+            src="https://images.unsplash.com/photo-1633356122102-3fe601e05bd2?w=1400&q=80"
+            alt="Neuronales Netz und maschinelles Lernen für Kulturerbe"
+            loading="lazy"
+          />
+          <div class="slide-content">
+            <p class="slide-num">Herausforderung 03 / 03</p>
+            <h3>Wissenschaftliche Validierung</h3>
+            <p>
+              KI-generierte Rekonstruktionen müssen historisch plausibel, 
+              transparent in ihrer Ableitung und wissenschaftlich nachvollziehbar sein – 
+              kein „black box"-Ansatz, sondern nachvollziehbare Argumentation.
+            </p>
+          </div>
+        </article>
+
+      </div><!-- /carousel-track -->
+    </div><!-- /carousel-wrapper -->
+
+    <div class="carousel-controls">
+      <button class="carousel-btn" id="carousel-prev" aria-label="Vorheriger Slide">&#8592;</button>
+      <div class="carousel-dots" role="tablist">
+        <button class="dot active" role="tab" aria-label="Slide 1"></button>
+        <button class="dot" role="tab" aria-label="Slide 2"></button>
+        <button class="dot" role="tab" aria-label="Slide 3"></button>
+      </div>
+      <button class="carousel-btn" id="carousel-next" aria-label="Nächster Slide">&#8594;</button>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ╔═══════════════════════════════════════╗ -->
+<!-- ║            KERNFRAGEN                 ║ -->
+<!-- ╚═══════════════════════════════════════╝ -->
+<section id="kernfragen" aria-label="Kernfragen des Projekts">
+  <div class="container">
+    <div class="reveal" style="text-align:center; max-width:680px; margin:0 auto;">
+      <p class="section-label">Forschungsfragen</p>
+      <h2 class="section-title">Drei Kernfragen unseres Projekts</h2>
+      <div class="divider-accent" style="margin:1rem auto 1.5rem;"></div>
+      <p class="section-intro">
+        REKONKI nähert sich der KI-gestützten Rekonstruktion aus drei komplementären Perspektiven – 
+        von der Anwendungsvielfalt über die technische Entwicklung bis zur Zieldefinition.
+      </p>
+    </div>
+
+    <div class="kernfragen-grid">
+
+      <article class="kf-card reveal">
+        <div class="kf-icon" aria-hidden="true">
+          <!-- Diversity icon -->
+          <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+            <circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 010 20M12 2a15 15 0 000 20"/>
+          </svg>
+        </div>
+        <h3>Verschiedenheit der Anwendungen</h3>
+        <p>
+          Rekonstruktion ist nicht gleich Rekonstruktion. Von sakraler Architektur über 
+          Stadtensembles bis zu archäologischen Stätten – unsere KI muss domänenübergreifend 
+          einsetzbar sein und sich an unterschiedliche Datenkontexte anpassen.
+        </p>
+      </article>
+
+      <article class="kf-card reveal">
+        <div class="kf-icon" aria-hidden="true">
+          <!-- AI/steps icon -->
+          <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+          </svg>
+        </div>
+        <h3>Unsere Schritte zur Erstellung einer KI</h3>
+        <p>
+          Wir beschreiben den gesamten Entwicklungspfad: Datenerhebung, Vorverarbeitung, 
+          Modellarchitektur, Training und Evaluierung. Jeder Schritt wird wissenschaftlich 
+          dokumentiert und für die Fachcommunity nachvollziehbar gemacht.
+        </p>
+      </article>
+
+      <article class="kf-card reveal">
+        <div class="kf-icon" aria-hidden="true">
+          <!-- Target icon -->
+          <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+            <circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/>
+          </svg>
+        </div>
+        <h3>Zielsetzung: Was muss die KI können?</h3>
+        <p>
+          Wir definieren messbare Kriterien: historische Plausibilität, geometrische Genauigkeit, 
+          Quellenreferenzierung und interpretative Transparenz. Diese Zieldimensionen leiten 
+          die gesamte Systementwicklung.
+        </p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ╔═══════════════════════════════════════╗ -->
+<!-- ║             NEWS-FEED                 ║ -->
+<!-- ╚═══════════════════════════════════════╝ -->
+<section id="news" aria-label="Aktuelle Neuigkeiten" style="background:var(--light-bg);">
+  <div class="container">
+    <div class="reveal" style="display:flex; align-items:flex-end; justify-content:space-between; flex-wrap:wrap; gap:1rem; margin-bottom:0;">
+      <div>
+        <p class="section-label">Aktuelles</p>
+        <h2 class="section-title">Neuigkeiten aus dem Projekt</h2>
+      </div>
+      <a href="pages/blog.html" class="btn-primary" style="margin-bottom:0.5rem;">Alle Beiträge</a>
+    </div>
+    <div class="divider-accent reveal"></div>
+
+    <div class="news-grid">
+
+      <a href="pages/blog.html#post-1" class="news-card reveal" aria-label="Blogartikel: Kickoff-Meeting">
+        <img
+          class="news-card-img"
+          src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=800&q=70"
+          alt="Projektteam beim Kickoff-Meeting"
+          loading="lazy"
+        />
+        <div class="news-card-body">
+          <span class="news-tag">Projektstart</span>
+          <h3>Offizieller Projektstart: Das REKONKI-Team stellt sich vor</h3>
+          <p>Nach intensiver Vorbereitungsphase ist das Projekt offiziell gestartet. 
+             Wir stellen Team, Ziele und erste Meilensteine vor.</p>
+          <p class="news-date">15. April 2026</p>
+        </div>
+      </a>
+
+      <a href="pages/blog.html#post-2" class="news-card reveal" aria-label="Blogartikel: Datensätze">
+        <img
+          class="news-card-img"
+          src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=70"
+          alt="Analyse von Forschungsdaten am Computer"
+          loading="lazy"
+        />
+        <div class="news-card-body">
+          <span class="news-tag">Forschung</span>
+          <h3>Erste Trainingsdatensätze für historische Rekonstruktionen aufgebaut</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+             Unsere Datenbasis wächst: erste kuratierte Bildarchive sind verfügbar.</p>
+          <p class="news-date">8. April 2026</p>
+        </div>
+      </a>
+
+      <a href="pages/blog.html#post-3" class="news-card reveal" aria-label="Blogartikel: Workshop">
+        <img
+          class="news-card-img"
+          src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&q=70"
+          alt="Workshop-Teilnehmer diskutieren Ergebnisse"
+          loading="lazy"
+        />
+        <div class="news-card-body">
+          <span class="news-tag">Veranstaltung</span>
+          <h3>Workshop: KI und Denkmalpflege – Chancen und Grenzen</h3>
+          <p>Lorem ipsum dolor sit amet. Ein interdisziplinärer Austausch zwischen 
+             Informatik, Architekturgeschichte und Restaurierung.</p>
+          <p class="news-date">22. März 2026</p>
+        </div>
+      </a>
+
+    </div><!-- /news-grid -->
+  </div>
+</section>
+
+
+<!-- ╔═══════════════════════════════════════╗ -->
+<!-- ║          PROJEKTPARTNER               ║ -->
+<!-- ╚═══════════════════════════════════════╝ -->
+<section id="partner" aria-label="Projektpartner">
+  <div class="container">
+    <div class="reveal">
+      <p class="section-label">Kooperationen</p>
+      <h2 class="section-title">Unsere Projektpartner</h2>
+      <div class="divider-accent"></div>
+      <p class="section-intro">
+        REKONKI lebt von interdisziplinärer Zusammenarbeit. Unsere Partner 
+        bringen Expertise aus Wissenschaft, Denkmalpflege und Technologie ein.
+      </p>
+    </div>
+
+    <ul class="partner-list" style="margin-top:3rem;">
+
+      <li class="partner-item reveal">
+        <div class="partner-logo-cell">
+          <div class="partner-logo-placeholder">Partner<br/>Logo</div>
+        </div>
+        <div class="partner-info">
+          <h3>Universität Musterstadt – Institut für Kunstgeschichte</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+             Das Institut bringt wissenschaftliche Expertise in historischer Bauforschung 
+             und Quellenkritik in das Projekt ein und begleitet die Validierung der KI-Ergebnisse.</p>
+        </div>
+      </li>
+
+      <li class="partner-item reveal">
+        <div class="partner-logo-cell">
+          <div class="partner-logo-placeholder">Partner<br/>Logo</div>
+        </div>
+        <div class="partner-info">
+          <h3>Landesamt für Denkmalpflege – Musterland</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+             Als behördlicher Partner stellt das Landesamt Bildarchive, 
+             Bestandsdokumentationen und Expertenwissen zur Verfügung 
+             und sichert die praxisnahe Anwendbarkeit der Projektergebnisse.</p>
+        </div>
+      </li>
+
+      <li class="partner-item reveal">
+        <div class="partner-logo-cell">
+          <div class="partner-logo-placeholder">Partner<br/>Logo</div>
+        </div>
+        <div class="partner-info">
+          <h3>TechVision GmbH – Softwareentwicklung & KI</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+             TechVision verantwortet die technische Infrastruktur, 
+             Modellentwicklung und den Betrieb der KI-Plattform 
+             und bringt industrielle Erfahrung in der Skalierung von ML-Systemen ein.</p>
+        </div>
+      </li>
+
+      <li class="partner-item reveal">
+        <div class="partner-logo-cell">
+          <div class="partner-logo-placeholder">Partner<br/>Logo</div>
+        </div>
+        <div class="partner-info">
+          <h3>Stadtarchiv Musterburg</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+             Das Stadtarchiv öffnet seine Bestände für das Projekt: 
+             historische Karten, Baupläne und Fotografien bilden 
+             einen wertvollen Kernbestand des Trainingsdatensatzes.</p>
+        </div>
+      </li>
+
+    </ul>
+  </div>
+</section>
+
+
+<!-- ╔═══════════════════════════════════════╗ -->
+<!-- ║              FOOTER                   ║ -->
+<!-- ╚═══════════════════════════════════════╝ -->
+<footer role="contentinfo">
+  <div class="container">
+    <div class="footer-top">
+
+      <!-- Brand -->
+      <div class="footer-brand">
+        <p class="footer-tagline">Projekt REKONKI</p>
+        <svg width="48" height="48" viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="REKONKI Logo" style="margin-bottom:1rem;">
+          <path d="M50 5 L95 25 L95 70 C95 90 70 110 50 118 C30 110 5 90 5 70 L5 25 Z" fill="rgba(55,83,87,0.8)" stroke="#E9A753" stroke-width="2"/>
+          <circle cx="50" cy="62" r="15" fill="none" stroke="#E9A753" stroke-width="1.5"/>
+          <circle cx="50" cy="62" r="5" fill="#E9A753"/>
+          <line x1="50" y1="20" x2="50" y2="115" stroke="rgba(217,204,196,0.3)" stroke-width="1"/>
+          <line x1="8" y1="62" x2="92" y2="62" stroke="rgba(217,204,196,0.3)" stroke-width="1"/>
+        </svg>
+        <p>KI-gestützte Rekonstruktion historischer Bauwerke und kulturellen Erbes. 
+           Vergangenheit digital erfahrbar machen.</p>
+      </div>
+
+      <!-- Projektträger Placeholder -->
+      <div class="footer-traeger">
+        <p class="footer-traeger-label">Gefördert durch</p>
+        <div class="footer-traeger-logo">Projektträger<br/>Logo</div>
+      </div>
+
+      <!-- Quick Links -->
+      <nav aria-label="Footer-Navigation">
+        <p class="footer-tagline" style="margin-bottom:1rem;">Navigation</p>
+        <ul style="list-style:none; display:flex; flex-direction:column; gap:0.5rem;">
+          <li><a href="index.html" style="color:rgba(217,204,196,0.6); text-decoration:none; font-size:0.85rem;">Startseite</a></li>
+          <li><a href="pages/team.html" style="color:rgba(217,204,196,0.6); text-decoration:none; font-size:0.85rem;">Projektteam</a></li>
+          <li><a href="pages/blog.html" style="color:rgba(217,204,196,0.6); text-decoration:none; font-size:0.85rem;">Blog</a></li>
+          <li><a href="pages/veranstaltungen.html" style="color:rgba(217,204,196,0.6); text-decoration:none; font-size:0.85rem;">Veranstaltungen</a></li>
+          <li><a href="pages/kontakt.html" style="color:rgba(217,204,196,0.6); text-decoration:none; font-size:0.85rem;">Kontakt</a></li>
+        </ul>
+      </nav>
+
+    </div><!-- /footer-top -->
+
+    <div class="footer-bottom">
+      <p class="footer-copy">&copy; 2026 Projekt REKONKI. Alle Rechte vorbehalten.</p>
+      <ul class="footer-links">
+        <li><a href="pages/impressum.html">Impressum</a></li>
+        <li><a href="pages/datenschutz.html">Datenschutz</a></li>
+        <li><a href="pages/kontakt.html">Kontakt</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

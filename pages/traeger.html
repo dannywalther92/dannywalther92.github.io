@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Projektträger von REKONKI – Förderung und institutionelle Einbettung des Forschungsprojekts." />
+  <title>Projektträger – REKONKI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    .page-hero { background: linear-gradient(135deg, var(--teal) 0%, #2a4042 100%); padding: 5rem 0 4rem; text-align: center; }
+    .page-hero h1 { color: var(--white); font-size: clamp(2rem,5vw,3.5rem); font-weight: 900; }
+    .page-hero p { color: var(--sand); margin-top: 0.75rem; }
+    .breadcrumb { font-size: 0.78rem; color: rgba(217,204,196,0.5); margin-bottom: 1.5rem; }
+    .breadcrumb a { color: var(--gold); text-decoration: none; }
+
+    .traeger-card {
+      background: var(--white);
+      border: 1px solid rgba(217,204,196,0.5);
+      border-radius: 8px;
+      padding: 3rem;
+      display: flex;
+      gap: 3rem;
+      align-items: flex-start;
+      margin-bottom: 2rem;
+    }
+    .traeger-logo-box {
+      flex-shrink: 0;
+      width: 200px;
+      height: 120px;
+      background: var(--light-bg);
+      border: 1px solid rgba(217,204,196,0.5);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.72rem;
+      color: #aaa;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      text-align: center;
+    }
+    .traeger-info h3 { font-size: 1.3rem; font-weight: 700; color: var(--dark); margin-bottom: 0.4rem; }
+    .traeger-type { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--gold); margin-bottom: 1rem; }
+    .traeger-info p { font-size: 0.92rem; color: #666; line-height: 1.75; }
+
+    .foerder-info {
+      background: var(--teal);
+      color: var(--sand);
+      border-radius: 8px;
+      padding: 3rem;
+      margin-top: 3rem;
+      text-align: center;
+    }
+    .foerder-info h3 { color: var(--white); font-size: 1.4rem; font-weight: 700; margin-bottom: 1rem; }
+    .foerder-info p { font-size: 0.92rem; line-height: 1.75; max-width: 640px; margin: 0 auto; }
+    .foerder-logos { display: flex; gap: 2rem; justify-content: center; margin-top: 2.5rem; flex-wrap: wrap; }
+    .foerder-logo-box {
+      width: 160px; height: 80px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(217,204,196,0.2);
+      border-radius: 6px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.65rem; color: rgba(217,204,196,0.5); text-transform: uppercase; letter-spacing: 0.1em; text-align: center;
+    }
+    @media (max-width: 768px) { .traeger-card { flex-direction: column; } .traeger-logo-box { width: 100%; } }
+  </style>
+</head>
+<body>
+
+<nav id="main-nav" role="navigation" aria-label="Hauptnavigation">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo">
+      <svg width="42" height="42" viewBox="0 0 100 120" fill="none" aria-hidden="true">
+        <path d="M50 5 L95 25 L95 70 C95 90 70 110 50 118 C30 110 5 90 5 70 L5 25 Z" fill="#375357" stroke="#E9A753" stroke-width="2"/>
+        <circle cx="50" cy="62" r="12" fill="none" stroke="#E9A753" stroke-width="1.5"/>
+        <line x1="50" y1="20" x2="50" y2="115" stroke="rgba(217,204,196,0.3)" stroke-width="1"/>
+        <line x1="8" y1="62" x2="92" y2="62" stroke="rgba(217,204,196,0.3)" stroke-width="1"/>
+      </svg>
+      <span class="nav-logo-text">REKONKI</span>
+    </a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="../index.html">Startseite</a></li>
+      <li class="nav-dropdown"><a href="#">Über uns</a>
+        <ul class="dropdown-menu">
+          <li><a href="team.html">Projektteam</a></li>
+          <li><a href="partner.html">Projektpartner</a></li>
+          <li><a href="traeger.html">Projektträger</a></li>
+          <li><a href="entwicklung.html">Projektentwicklung</a></li>
+        </ul>
+      </li>
+      <li class="nav-dropdown"><a href="#">Aktuelles</a>
+        <ul class="dropdown-menu">
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="veranstaltungen.html">Veranstaltungen</a></li>
+        </ul>
+      </li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+    </ul>
+    <button class="burger" id="burger" aria-label="Menü öffnen"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<header class="page-hero">
+  <div class="container">
+    <p class="breadcrumb"><a href="../index.html">Startseite</a> › Über uns › Projektträger</p>
+    <h1>Projektträger</h1>
+    <p>Förderung und institutionelle Einbettung von REKONKI</p>
+  </div>
+</header>
+
+<section>
+  <div class="container">
+    <div class="reveal" style="max-width:680px; margin-bottom:3rem;">
+      <p class="section-label">Förderung</p>
+      <h2 class="section-title">Wer trägt das Projekt?</h2>
+      <div class="divider-accent"></div>
+      <p class="section-intro">
+        REKONKI wird von öffentlichen und privaten Trägern gefördert und 
+        ist institutionell in der deutschen Forschungslandschaft verankert.
+      </p>
+    </div>
+
+    <div class="traeger-card reveal">
+      <div class="traeger-logo-box">Träger Logo</div>
+      <div class="traeger-info">
+        <p class="traeger-type">Primärer Projektträger</p>
+        <h3>Bundesministerium für Bildung und Forschung (Platzhalter)</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Als institutioneller Träger stellt das Ministerium die Hauptförderung bereit, definiert den Förderrahmen und begleitet das Projekt administrativ. Die Förderung läuft im Rahmen des Programms „Digitales Kulturerbe 2025–2028".</p>
+      </div>
+    </div>
+
+    <div class="traeger-card reveal">
+      <div class="traeger-logo-box">Träger Logo</div>
+      <div class="traeger-info">
+        <p class="traeger-type">Kofinanzierung</p>
+        <h3>Ministerium für Wissenschaft und Kultur – Musterland (Platzhalter)</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Das Landesministerium ergänzt die Bundesförderung durch eine regionale Kofinanzierung und stellt den Bezug zu den lokalen Denkmalpflegebehörden sicher. Es fungiert als Bindeglied zwischen dem Projekt und den regionalen Stakeholdern.</p>
+      </div>
+    </div>
+
+    <div class="foerder-info reveal">
+      <h3>Förderinformationen</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Das Projekt REKONKI wird im Zeitraum 2025–2028 mit einem Gesamtvolumen von X Millionen Euro gefördert. Ziel ist die Entwicklung einer übertragbaren KI-gestützten Methodik für die Rekonstruktion historischen Kulturerbes.</p>
+      <div class="foerder-logos">
+        <div class="foerder-logo-box">Förder­logo 1</div>
+        <div class="foerder-logo-box">Förder­logo 2</div>
+        <div class="foerder-logo-box">EU-Flagge / Förderhinweis</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer role="contentinfo">
+  <div class="container">
+    <div class="footer-bottom" style="border-top:1px solid rgba(217,204,196,0.12);padding-top:2rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;">
+      <p class="footer-copy">&copy; 2026 Projekt REKONKI. Alle Rechte vorbehalten.</p>
+      <ul class="footer-links">
+        <li><a href="impressum.html">Impressum</a></li>
+        <li><a href="datenschutz.html">Datenschutz</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+<script src="../js/main.js"></script>
+</body>
+</html>

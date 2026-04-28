@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Projektpartner von REKONKI – Institutionen und Organisationen, die das Forschungsprojekt unterstützen." />
+  <title>Projektpartner – REKONKI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    .page-hero { background: linear-gradient(135deg, var(--teal) 0%, #2a4042 100%); padding: 5rem 0 4rem; text-align: center; }
+    .page-hero h1 { color: var(--white); font-size: clamp(2rem,5vw,3.5rem); font-weight: 900; }
+    .page-hero p { color: var(--sand); margin-top: 0.75rem; }
+    .breadcrumb { font-size: 0.78rem; color: rgba(217,204,196,0.5); margin-bottom: 1.5rem; }
+    .breadcrumb a { color: var(--gold); text-decoration: none; }
+
+    .partner-detail {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 2.5rem;
+      align-items: start;
+      background: var(--white);
+      border: 1px solid rgba(217,204,196,0.5);
+      border-left: 4px solid var(--gold);
+      border-radius: 6px;
+      padding: 2.5rem;
+      margin-bottom: 2rem;
+      transition: box-shadow 0.2s;
+    }
+    .partner-detail:hover { box-shadow: 0 8px 32px rgba(55,83,87,0.12); }
+    .partner-logo-box {
+      width: 100%;
+      aspect-ratio: 16/9;
+      background: var(--light-bg);
+      border: 1px solid rgba(217,204,196,0.5);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      color: #aaa;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      text-align: center;
+    }
+    .partner-detail h3 { font-size: 1.15rem; font-weight: 700; color: var(--dark); margin-bottom: 0.35rem; }
+    .partner-type {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--teal);
+      margin-bottom: 1rem;
+    }
+    .partner-detail p { font-size: 0.9rem; color: #666; line-height: 1.75; }
+    @media (max-width: 768px) { .partner-detail { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+<nav id="main-nav" role="navigation" aria-label="Hauptnavigation">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo">
+      <svg width="42" height="42" viewBox="0 0 100 120" fill="none" aria-hidden="true">
+        <path d="M50 5 L95 25 L95 70 C95 90 70 110 50 118 C30 110 5 90 5 70 L5 25 Z" fill="#375357" stroke="#E9A753" stroke-width="2"/>
+        <circle cx="50" cy="62" r="12" fill="none" stroke="#E9A753" stroke-width="1.5"/>
+        <line x1="50" y1="20" x2="50" y2="115" stroke="rgba(217,204,196,0.3)" stroke-width="1"/>
+        <line x1="8" y1="62" x2="92" y2="62" stroke="rgba(217,204,196,0.3)" stroke-width="1"/>
+      </svg>
+      <span class="nav-logo-text">REKONKI</span>
+    </a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="../index.html">Startseite</a></li>
+      <li class="nav-dropdown"><a href="#">Über uns</a>
+        <ul class="dropdown-menu">
+          <li><a href="team.html">Projektteam</a></li>
+          <li><a href="partner.html">Projektpartner</a></li>
+          <li><a href="traeger.html">Projektträger</a></li>
+          <li><a href="entwicklung.html">Projektentwicklung</a></li>
+        </ul>
+      </li>
+      <li class="nav-dropdown"><a href="#">Aktuelles</a>
+        <ul class="dropdown-menu">
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="veranstaltungen.html">Veranstaltungen</a></li>
+        </ul>
+      </li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+    </ul>
+    <button class="burger" id="burger" aria-label="Menü öffnen"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<header class="page-hero">
+  <div class="container">
+    <p class="breadcrumb"><a href="../index.html">Startseite</a> › Über uns › Projektpartner</p>
+    <h1>Projektpartner</h1>
+    <p>Institutionen und Organisationen, die REKONKI gemeinsam tragen</p>
+  </div>
+</header>
+
+<section>
+  <div class="container">
+    <div class="reveal" style="max-width:680px; margin-bottom:3rem;">
+      <p class="section-label">Kooperationen</p>
+      <h2 class="section-title">Unsere Projektpartner</h2>
+      <div class="divider-accent"></div>
+      <p class="section-intro">
+        REKONKI ist ein interdisziplinäres Verbundprojekt. Die Stärke des Projekts liegt in der 
+        engen Zusammenarbeit zwischen Wissenschaft, Behörden, Archiven und der Technologiebranche.
+      </p>
+    </div>
+
+    <article class="partner-detail reveal">
+      <div>
+        <div class="partner-logo-box">Partner Logo</div>
+      </div>
+      <div>
+        <p class="partner-type">Wissenschaft</p>
+        <h3>Universität Musterstadt – Institut für Kunstgeschichte</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Das Institut bringt wissenschaftliche Expertise in historischer Bauforschung und Quellenkritik in das Projekt ein. Es begleitet die Validierung der KI-Ergebnisse und stellt die kunsthistorische Einordnung aller Rekonstruktionen sicher.</p>
+      </div>
+    </article>
+
+    <article class="partner-detail reveal">
+      <div>
+        <div class="partner-logo-box">Partner Logo</div>
+      </div>
+      <div>
+        <p class="partner-type">Behörde</p>
+        <h3>Landesamt für Denkmalpflege – Musterland</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Als behördlicher Partner stellt das Landesamt Bildarchive, Bestandsdokumentationen und Expertenwissen zur Verfügung. Die enge Kooperation sichert die praxisnahe Anwendbarkeit der Projektergebnisse und ermöglicht eine direkte Anbindung an die professionelle Denkmalpflege.</p>
+      </div>
+    </article>
+
+    <article class="partner-detail reveal">
+      <div>
+        <div class="partner-logo-box">Partner Logo</div>
+      </div>
+      <div>
+        <p class="partner-type">Technologie</p>
+        <h3>TechVision GmbH – Softwareentwicklung &amp; KI</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. TechVision verantwortet die technische Infrastruktur, Modellentwicklung und den Betrieb der KI-Plattform. Das Unternehmen bringt langjährige industrielle Erfahrung in der Skalierung von Machine-Learning-Systemen ein und stellt die Software-Entwicklungskapazitäten des Projekts.</p>
+      </div>
+    </article>
+
+    <article class="partner-detail reveal">
+      <div>
+        <div class="partner-logo-box">Partner Logo</div>
+      </div>
+      <div>
+        <p class="partner-type">Archiv</p>
+        <h3>Stadtarchiv Musterburg</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Das Stadtarchiv öffnet seine umfangreichen Bestände für das Projekt: historische Karten, Baupläne, Risse und Fotografien bilden einen wertvollen Kernbestand des Trainingsdatensatzes. Die Zusammenarbeit stärkt zudem die digitale Erschließung der Archivbestände.</p>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<footer role="contentinfo">
+  <div class="container">
+    <div class="footer-bottom" style="border-top:1px solid rgba(217,204,196,0.12);padding-top:2rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;">
+      <p class="footer-copy">&copy; 2026 Projekt REKONKI. Alle Rechte vorbehalten.</p>
+      <ul class="footer-links">
+        <li><a href="impressum.html">Impressum</a></li>
+        <li><a href="datenschutz.html">Datenschutz</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+<script src="../js/main.js"></script>
+</body>
+</html>
