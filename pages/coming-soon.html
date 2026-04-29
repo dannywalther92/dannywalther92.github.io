@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>In Bearbeitung – REKONKI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --dark: #333333;
+      --sand: #D9CCC4;
+      --terracotta: #C3937D;
+      --gold: #E9A753;
+      --teal: #375357;
+      --white: #FAFAF8;
+      --light-bg: #F5F0EC;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(135deg, var(--teal) 0%, #2a4042 55%, #1e2f31 100%);
+      color: var(--white);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Grid overlay */
+    body::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(217,204,196,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(217,204,196,0.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+      mask-image: radial-gradient(ellipse at center, black 30%, transparent 80%);
+      pointer-events: none;
+    }
+
+    /* Glow blobs */
+    body::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 15% 50%, rgba(233,167,83,0.08) 0%, transparent 55%),
+        radial-gradient(ellipse at 85% 20%, rgba(195,147,125,0.07) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+      max-width: 600px;
+    }
+
+    /* Logo */
+    .logo-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+      margin-bottom: 3rem;
+    }
+    .logo-text {
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: var(--sand);
+    }
+
+    /* Badge */
+    .badge {
+      display: inline-block;
+      background: rgba(233,167,83,0.15);
+      border: 1px solid rgba(233,167,83,0.4);
+      color: var(--gold);
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      padding: 0.35rem 1rem;
+      border-radius: 100px;
+      margin-bottom: 2rem;
+      text-transform: uppercase;
+      font-weight: 700;
+      animation: fadeDown 0.6s ease both;
+    }
+
+    /* Construction icon */
+    .icon-wrap {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: rgba(233,167,83,0.1);
+      border: 1px solid rgba(233,167,83,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 2rem;
+      animation: fadeDown 0.6s 0.1s ease both, pulse 3s 1s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(233,167,83,0.2); }
+      50%       { box-shadow: 0 0 0 12px rgba(233,167,83,0); }
+    }
+
+    h1 {
+      font-size: clamp(1.8rem, 5vw, 3rem);
+      font-weight: 900;
+      color: var(--white);
+      line-height: 1.1;
+      margin-bottom: 1rem;
+      animation: fadeDown 0.6s 0.2s ease both;
+    }
+    h1 span { color: var(--gold); }
+
+    .subtitle {
+      font-size: 1rem;
+      color: var(--sand);
+      font-weight: 300;
+      line-height: 1.7;
+      margin-bottom: 2.5rem;
+      animation: fadeDown 0.6s 0.3s ease both;
+    }
+
+    /* Progress bar */
+    .progress-wrap {
+      background: rgba(217,204,196,0.12);
+      border-radius: 100px;
+      height: 4px;
+      width: 100%;
+      max-width: 320px;
+      margin: 0 auto 2.5rem;
+      overflow: hidden;
+      animation: fadeDown 0.6s 0.4s ease both;
+    }
+    .progress-bar {
+      height: 100%;
+      width: 35%;
+      background: linear-gradient(90deg, var(--terracotta), var(--gold));
+      border-radius: 100px;
+      animation: grow 1.8s 0.8s ease both;
+    }
+    @keyframes grow {
+      from { width: 0%; }
+      to   { width: 35%; }
+    }
+    .progress-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(217,204,196,0.5);
+      margin-bottom: 3rem;
+      animation: fadeDown 0.6s 0.45s ease both;
+    }
+
+    /* Back button */
+    .btn-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--gold);
+      color: var(--dark);
+      padding: 0.85rem 2rem;
+      font-weight: 700;
+      font-size: 0.88rem;
+      letter-spacing: 0.06em;
+      text-decoration: none;
+      border-radius: 4px;
+      text-transform: uppercase;
+      transition: background 0.2s, transform 0.15s;
+      animation: fadeDown 0.6s 0.5s ease both;
+    }
+    .btn-back:hover { background: #d4923f; transform: translateY(-2px); }
+
+    /* Page name display */
+    .page-name {
+      display: inline-block;
+      margin-top: 2rem;
+      font-size: 0.78rem;
+      color: rgba(217,204,196,0.4);
+      letter-spacing: 0.06em;
+      animation: fadeDown 0.6s 0.55s ease both;
+    }
+    .page-name strong {
+      color: rgba(217,204,196,0.65);
+    }
+
+    /* Footer note */
+    .footer-note {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.75rem;
+      color: rgba(217,204,196,0.3);
+      white-space: nowrap;
+    }
+
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 480px) {
+      .footer-note { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="content">
+
+  <!-- Logo -->
+  <a href="../index.html" class="logo-link">
+    <svg width="36" height="36" viewBox="0 0 100 120" fill="none" aria-hidden="true">
+      <path d="M50 5 L95 25 L95 70 C95 90 70 110 50 118 C30 110 5 90 5 70 L5 25 Z"
+            fill="rgba(55,83,87,0.8)" stroke="#E9A753" stroke-width="3"/>
+      <circle cx="50" cy="62" r="12" fill="none" stroke="#E9A753" stroke-width="2"/>
+      <line x1="50" y1="20" x2="50" y2="115" stroke="rgba(217,204,196,0.3)" stroke-width="1"/>
+      <line x1="8"  y1="62" x2="92" y2="62"  stroke="rgba(217,204,196,0.3)" stroke-width="1"/>
+    </svg>
+    <span class="logo-text">REKONKI</span>
+  </a>
+
+  <div class="badge">Seite in Bearbeitung</div>
+
+  <!-- Icon -->
+  <div class="icon-wrap" aria-hidden="true">
+    <svg width="34" height="34" fill="none" viewBox="0 0 24 24" stroke="#E9A753" stroke-width="1.6">
+      <path stroke-linecap="round" stroke-linejoin="round"
+            d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 004.486-6.336l-3.276 3.277a3.004 3.004 0 01-2.25-2.25l3.276-3.276a4.5 4.5 0 00-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437l1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008z"/>
+    </svg>
+  </div>
+
+  <h1>Diese Seite ist<br/><span>in Bearbeitung</span></h1>
+
+  <p class="subtitle">
+    Wir arbeiten gerade an diesem Bereich der REKONKI-Website.<br/>
+    Bitte besuche uns bald wieder – es lohnt sich!
+  </p>
+
+  <div class="progress-wrap">
+    <div class="progress-bar"></div>
+  </div>
+  <p class="progress-label">Projektwebseite · Aufbau läuft</p>
+
+  <a href="../index.html" class="btn-back">
+    ← Zurück zur Startseite
+  </a>
+
+  <p class="page-name" id="page-name"></p>
+
+</div>
+
+<p class="footer-note">&copy; 2026 Projekt REKONKI</p>
+
+<script>
+  // Zeigt automatisch an, von welcher Seite man kam (optional)
+  const ref = document.referrer;
+  if (ref && ref !== window.location.href) {
+    try {
+      const url = new URL(ref);
+      const name = url.pathname.split('/').pop().replace('.html','').replace(/-/g,' ');
+      if (name) {
+        document.getElementById('page-name').innerHTML =
+          'Aufgerufene Seite: <strong>' + name.charAt(0).toUpperCase() + name.slice(1) + '</strong>';
+      }
+    } catch(e) {}
+  }
+</script>
+
+</body>
+</html>
