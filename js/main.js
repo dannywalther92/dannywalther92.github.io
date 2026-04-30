@@ -38,7 +38,7 @@ const nextBtn = document.getElementById('carousel-next');
 let current = 0;
 let autoTimer;
 const TOTAL = 3;
-const AUTO_DELAY = 7000;
+const AUTO_DELAY = 10000;
 
 function goTo(index) {
   current = (index + TOTAL) % TOTAL;
