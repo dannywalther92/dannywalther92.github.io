@@ -673,3 +673,23 @@ footer {
   background: var(--gold);
   margin: 1rem 0 1.5rem;
 }
+
+/* Social Link LinkedIn Profil */
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(55,83,87,0.08);
+  color: var(--teal);
+  transition: background 0.2s, color 0.2s, transform 0.15s;
+}
+
+.social-link:hover {
+  background: var(--teal);
+  color: var(--white);
+  transform: translateY(-2px);
+}
