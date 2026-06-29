@@ -119,7 +119,7 @@ function renderPartnerList(containerId) {
   if (!container) return;
 
   container.innerHTML = PARTNERS.map(p => `
-    <li class="partner-item reveal">
+    <li class="partner-item">
       <div class="partner-logo-cell">
         <a href="${p.url}" target="_blank" rel="noopener noreferrer"
            aria-label="Zur Webseite: ${p.name}">
@@ -147,7 +147,7 @@ function renderPartnerDetails(containerId) {
   if (!container) return;
 
   container.innerHTML = PARTNERS.map(p => `
-    <article class="partner-detail reveal">
+    <article class="partner-detail">
       <div>
         <div class="partner-logo-box">
           <a href="${p.url}" target="_blank" rel="noopener noreferrer"
