@@ -59,34 +59,7 @@
 </head>
 <body>
 
-<nav id="main-nav" role="navigation" aria-label="Hauptnavigation">
-  <div class="nav-inner">
-    <a href="../index.html" class="nav-logo">
-      <img src="../img/logo_v1.png" alt=REKONKI Logo" />
-      <span class="nav-logo-text">Projekt RekonKI</span>
-    </a>
-
-    <ul class="nav-links" id="nav-links">
-      <li><a href="../index.html">Startseite</a></li>
-      <li class="nav-dropdown"><a href="#">Über uns</a>
-        <ul class="dropdown-menu">
-          <li><a href="team.html">Projektteam</a></li>
-          <li><a href="partner.html">Projektpartner</a></li>
-          <li><a href="traeger.html">Projektträger</a></li>
-          <li><a href="entwicklung.html">Projektentwicklung</a></li>
-        </ul>
-      </li>
-      <li class="nav-dropdown"><a href="#">Aktuelles</a>
-        <ul class="dropdown-menu">
-          <li><a href="blog.html">Blog</a></li>
-          <li><a href="veranstaltungen.html">Veranstaltungen</a></li>
-        </ul>
-      </li>
-      <li><a href="kontakt.html">Kontakt</a></li>
-    </ul>
-    <button class="burger" id="burger" aria-label="Menü öffnen"><span></span><span></span><span></span></button>
-  </div>
-</nav>
+<div id="partner-detail-list"></div>
 
 <header class="page-hero">
   <div class="container">
@@ -156,18 +129,14 @@
   </div>
 </section>
 
-<footer role="contentinfo">
-  <div class="container">
-    <div class="footer-bottom" style="border-top:1px solid rgba(217,204,196,0.12);padding-top:2rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;">
-      <p class="footer-copy">&copy; 2026 Projekt REKONKI. Alle Rechte vorbehalten.</p>
-      <ul class="footer-links">
-        <li><a href="impressum.html">Impressum</a></li>
-        <li><a href="datenschutz.html">Datenschutz</a></li>
-        <li><a href="kontakt.html">Kontakt</a></li>
-      </ul>
-    </div>
-  </div>
-</footer>
-<script src="../js/main.js"></script>
+<div id="site-footer"></div>
+  <script src="../js/main.js"></script>
+<script src="../js/partners.js"></script>
+<script src="../js/components.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderPartnerDetails("partner-detail-list");
+  });
+</script>
 </body>
 </html>
