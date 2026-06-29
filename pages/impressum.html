@@ -12,35 +12,20 @@
     .page-hero h1 { color: var(--white); font-size: clamp(1.8rem,4vw,3rem); font-weight: 900; }
     .breadcrumb { font-size: 0.78rem; color: rgba(217,204,196,0.5); margin-bottom: 1.5rem; }
     .breadcrumb a { color: var(--gold); text-decoration: none; }
-    .legal-content { max-width: 760px; margin: 4rem auto; padding: 0 2rem; }
+    .legal-content { max-width: 760px; margin: 4rem auto; padding: 0 2rem 4rem; }
     .legal-content h2 { font-size: 1.2rem; font-weight: 700; color: var(--dark); margin: 2rem 0 0.6rem; border-bottom: 1px solid rgba(217,204,196,0.5); padding-bottom: 0.4rem; }
     .legal-content p, .legal-content address { font-size: 0.92rem; color: #666; line-height: 1.75; font-style: normal; }
     .legal-content a { color: var(--teal); }
   </style>
 </head>
 <body>
-<nav id="main-nav" role="navigation" aria-label="Hauptnavigation">
-  <div class="nav-inner">
-    <a href="../index.html" class="nav-logo">
-      <svg width="42" height="42" viewBox="0 0 100 120" fill="none" aria-hidden="true">
-        <path d="M50 5 L95 25 L95 70 C95 90 70 110 50 118 C30 110 5 90 5 70 L5 25 Z" fill="#375357" stroke="#E9A753" stroke-width="2"/>
-        <circle cx="50" cy="62" r="12" fill="none" stroke="#E9A753" stroke-width="1.5"/>
-        <line x1="50" y1="20" x2="50" y2="115" stroke="rgba(217,204,196,0.3)" stroke-width="1"/>
-        <line x1="8" y1="62" x2="92" y2="62" stroke="rgba(217,204,196,0.3)" stroke-width="1"/>
-      </svg>
-      <span class="nav-logo-text">REKONKI</span>
-    </a>
-    <ul class="nav-links" id="nav-links">
-      <li><a href="../index.html">Startseite</a></li>
-      <li><a href="kontakt.html">Kontakt</a></li>
-    </ul>
-    <button class="burger" id="burger" aria-label="Menü öffnen"><span></span><span></span><span></span></button>
-  </div>
-</nav>
+
+<!-- Navigation → wird durch js/components.js eingefügt -->
+<div id="site-nav"></div>
 
 <header class="page-hero">
   <div class="container">
-    <p class="breadcrumb"><a href="../index.html">Startseite</a> › Impressum</p>
+    <p class="breadcrumb"><a href="/index.html">Startseite</a> › Impressum</p>
     <h1>Impressum</h1>
   </div>
 </header>
@@ -68,24 +53,19 @@
   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Zuständige Behörde: Platzhalter.</p>
 
   <h2>Haftungsausschluss</h2>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Die Inhalte dieser Website wurden mit größtmöglicher Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen.</p>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Die Inhalte dieser Website wurden mit größtmöglicher Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen.</p>
 
   <h2>Urheberrecht</h2>
   <p>Lorem ipsum dolor sit amet. Die auf dieser Website veröffentlichten Inhalte unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung oder Verbreitung bedarf der schriftlichen Genehmigung der jeweiligen Autoren.</p>
 </div>
 
-<footer role="contentinfo">
-  <div class="container">
-    <div class="footer-bottom" style="border-top:1px solid rgba(217,204,196,0.12);padding-top:2rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;">
-      <p class="footer-copy">&copy; 2026 Projekt REKONKI. Alle Rechte vorbehalten.</p>
-      <ul class="footer-links">
-        <li><a href="impressum.html">Impressum</a></li>
-        <li><a href="datenschutz.html">Datenschutz</a></li>
-        <li><a href="kontakt.html">Kontakt</a></li>
-      </ul>
-    </div>
-  </div>
-</footer>
+<!-- Footer → wird durch js/components.js eingefügt -->
+<div id="site-footer"></div>
+
+<!-- Scripts -->
 <script src="../js/main.js"></script>
+<script src="../js/partners.js"></script>
+<script src="../js/components.js"></script>
+
 </body>
 </html>
