@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Projekt REKONKI – KI-gestützte Rekonstruktion kulturellen Erbes." />
+  <title>REKONKI – Rekonstruktion mit Künstlicher Intelligenz</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- Navigation → wird durch js/components.js eingefügt -->
+<div id="site-nav"></div>
+
+
+<!-- ╔═══════════════════════════════════════╗ -->
+<!-- ║              HERO                     ║ -->
+<!-- ╚═══════════════════════════════════════╝ -->
+<section id="hero" aria-label="Willkommensbereich">
+  <div class="hero-content">
+    <div class="hero-badge">Forschungsprojekt · KI & Kulturerbe</div>
+
+    <img
+      src="/img/logo_v1.png"
+      alt="RekonKI Logo"
+      class="hero-logo-img"
+    />
+
+    <h1 class="hero-title">PROJEKT <span>REKONKI</span></h1>
+    <p class="hero-sub">Rekonstruktion mit Künstlicher Intelligenz</p>
+
+    <p class="hero-statement">
+      Wir entwickeln ein unterstützendes KI-Assistenzsystem zur Rekonstruktion historischen 
+      und kulturellen Erbes und machen Vergangenes schneller wieder erfahrbar.
+    </p>
+
+    <div class="hero-cta">
+      <a href="#kernfragen" class="btn-primary">Forschung entdecken</a>
+      <a href="/pages/team.html" class="btn-secondary">Zum Projektteam</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ╔═══════════════════════════════════════╗ -->
+<!-- ║         PROBLEM-KARUSSELL             ║ -->
+<!-- ╚═══════════════════════════════════════╝ -->
+<section id="challenges" aria-label="Herausforderungen">
+  <div class="container">
+    <div class="reveal">
+      <p class="section-label">Herausforderungen</p>
+      <h2 class="section-title">Die Komplexität der Rekonstruktion</h2>
+    </div>
+
+    <div class="carousel-wrapper reveal">
+      <div class="carousel-track" id="carousel-track" role="list">
+
+        <!-- Slide 1 -->
+        <article class="carousel-slide" role="listitem">
+          <img
+            src="/pic/pic_car1.png"
+            alt="Alter Stoff wird von einer Restauratorin untersucht, ein Hologram unterstützt"
+            loading="lazy"
+          />
+          <div class="slide-content">
+            <p class="slide-num">Herausforderung 01 / 03</p>
+            <h3>Vielschichtigkeit des Prozesses</h3>
+            <p>
+              Der Prozess der Rekonstruktion beginnt in der Regel mit einer umfassenden wissenschaftlichen Analyse des Bestandes. 
+              Die Art und Beschaffenheit des Objekts und der Quellen bilden die entsprechende Voraussetzung der Folgeschritte.
+              Künstliche Intelligenz kann bei der Aufnahme und der Konkretisierung von Schlussfolgerungen diese Abläufe beschleunigen.
+            </p>
+          </div>
+        </article>
+
+        <!-- Slide 2 -->
+        <article class="carousel-slide" role="listitem">
+          <img
+            src="/pic/pic_car2.png"
+            alt="Auf der linken Seite sind durcheinandergewirbelte Aufzeichnungen, in der Mitte eine Singularität die nach rechts geordnete Daten ausgibt."
+            loading="lazy"
+          />
+          <div class="slide-content">
+            <p class="slide-num">Herausforderung 02 / 03</p>
+            <h3>Daten als Basis für die Rekonstruktion</h3>
+            <p>
+              Der Bestand an Daten liegt aus der Erfahrung oftmals in verschiedenen Formaten vor. 
+              Einen einheitlichen Datenpool mit konkreten Charakteristiken aufzusetzen war deshalb schwer.
+              Künstliche Intelligenz ist in der Lage Beziehungen zwischen Datensätzen herzustellen und erleichtert eine Kategorisierung.
+            </p>
+          </div>
+        </article>
+
+        <!-- Slide 3 -->
+        <article class="carousel-slide" role="listitem">
+          <img
+            src="/pic/pic_car3.png"
+            alt="Auf einem Tisch ist ein alter beschädigter Wandteppich ausgebreitet, ein Hologram zeigt prozentuale Übereinstimmungen zur Einordnung des Stoffes"
+            loading="lazy"
+          />
+          <div class="slide-content">
+            <p class="slide-num">Herausforderung 03 / 03</p>
+            <h3>Wissenschaftliche Validierung</h3>
+            <p>
+              KI-generierte Rekonstruktionen müssen historisch plausibel, 
+              transparent in ihrer Ableitung und wissenschaftlich nachvollziehbar sein – 
+              kein „black box"-Ansatz, sondern nachvollziehbare Argumentation.
+            </p>
+          </div>
+        </article>
+
+      </div><!-- /carousel-track -->
+    </div><!-- /carousel-wrapper -->
+
+    <div class="carousel-controls">
+      <button class="carousel-btn" id="carousel-prev" aria-label="Vorheriger Slide">&#8592;</button>
+      <div class="carousel-dots" role="tablist">
+        <button class="dot active" role="tab" aria-label="Slide 1"></button>
+        <button class="dot" role="tab" aria-label="Slide 2"></button>
+        <button class="dot" role="tab" aria-label="Slide 3"></button>
+      </div>
+      <button class="carousel-btn" id="carousel-next" aria-label="Nächster Slide">&#8594;</button>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ╔═══════════════════════════════════════╗ -->
+<!-- ║            KERNFRAGEN                 ║ -->
+<!-- ╚═══════════════════════════════════════╝ -->
+<section id="kernfragen" aria-label="Kernfragen des Projekts">
+  <div class="container">
+    <div class="reveal" style="text-align:center; max-width:680px; margin:0 auto;">
+      <p class="section-label">Forschungsfragen</p>
+      <h2 class="section-title">Drei Kernfragen unseres Projekts</h2>
+      <div class="divider-accent" style="margin:1rem auto 1.5rem;"></div>
+      <p class="section-intro">
+        RekonKI nähert sich der KI-gestützten Rekonstruktion aus drei komplementären Perspektiven – 
+        von der Anwendungsvielfalt über die Zieldefinition bis zur technischen Entwicklung und Umsetzung.
+      </p>
+    </div>
+
+    <div class="kernfragen-grid">
+
+      <article class="kf-card reveal">
+        <div class="kf-icon" aria-hidden="true">
+          <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+            <circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 010 20M12 2a15 15 0 000 20"/>
+          </svg>
+        </div>
+        <h3>Verschiedenheit der Anwendungen</h3>
+        <p>
+          Rekonstruktion ist nicht gleich Rekonstruktion. Von textilen Anwendungen in Form von 
+          der Aufarbeitung von Trachten oder Wandteppichen über Fassadenrekonstruktion
+          bis hin zu ganzen Gebäuden – ein KI-Assistenzsystem muss domänenübergreifend 
+          einsetzbar sein und sich an unterschiedliche Datenkontexte anpassen.
+        </p>
+      </article>
+
+      <article class="kf-card reveal">
+        <div class="kf-icon" aria-hidden="true">
+          <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+          </svg>
+        </div>
+        <h3>Unsere Schritte zur Erstellung einer KI</h3>
+        <p>
+          Wir beschreiben den gesamten Entwicklungspfad: Prozessanalyse, Zieldefinition der 
+          verschiedenen Anwendungsbereiche, Modellarchitektur, Training und Evaluierung.
+          Jeder Schritt wird wissenschaftlich dokumentiert und für die Fachcommunity nachvollziehbar gemacht.
+        </p>
+      </article>
+
+      <article class="kf-card reveal">
+        <div class="kf-icon" aria-hidden="true">
+          <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+            <circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/>
+          </svg>
+        </div>
+        <h3>Zielsetzung: Was muss die KI können?</h3>
+        <p>
+          Wir definieren messbare Kriterien: historische Plausibilität, geometrische Genauigkeit, 
+          Quellenreferenzierung und interpretative Transparenz. Diese Zieldimensionen leiten 
+          die gesamte Systementwicklung.
+        </p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ╔═══════════════════════════════════════╗ -->
+<!-- ║             NEWS-FEED                 ║ -->
+<!-- Daten & Render → js/news.js             ║ -->
+<!-- Zeigt immer die 3 aktuellsten Posts     ║ -->
+<!-- ╚═══════════════════════════════════════╝ -->
+<section id="news" aria-label="Aktuelle Neuigkeiten" style="background:var(--light-bg);">
+  <div class="container">
+    <div class="reveal" style="display:flex; align-items:flex-end; justify-content:space-between; flex-wrap:wrap; gap:1rem; margin-bottom:0;">
+      <div>
+        <p class="section-label">Aktuelles</p>
+        <h2 class="section-title">Neuigkeiten aus dem Projekt</h2>
+      </div>
+      <a href="/pages/blog.html" class="btn-primary" style="margin-bottom:0.5rem;">Alle Beiträge</a>
+    </div>
+    <div class="divider-accent reveal"></div>
+
+    <div class="news-grid" id="news-grid"></div>
+
+  </div>
+</section>
+
+
+<!-- ╔═══════════════════════════════════════╗ -->
+<!-- ║          PROJEKTPARTNER               ║ -->
+<!-- Daten & Render → js/partners.js         ║ -->
+<!-- ╚═══════════════════════════════════════╝ -->
+<section id="partner" aria-label="Projektpartner">
+  <div class="container">
+    <div class="reveal">
+      <p class="section-label">Kooperationen</p>
+      <h2 class="section-title">Unsere Projektpartner</h2>
+      <div class="divider-accent"></div>
+      <p class="section-intro">
+        RekonKI lebt von interdisziplinärer Zusammenarbeit. Unsere Partner 
+        bringen Expertise aus Wissenschaft, Denkmalpflege und Technologie ein.
+      </p>
+    </div>
+
+    <ul class="partner-list" id="partner-list" style="margin-top:3rem;"></ul>
+
+  </div>
+</section>
+
+
+<!-- Footer → wird durch js/components.js eingefügt -->
+<div id="site-footer"></div>
+
+<!-- Scripts -->
+<script src="js/main.js"></script>
+<script src="js/partners.js"></script>
+<script src="js/news.js"></script>
+<script src="js/components.js"></script>
+
+</body>
+</html>
