@@ -200,6 +200,8 @@
 
 <!-- ╔═══════════════════════════════════════╗ -->
 <!-- ║             NEWS-FEED                 ║ -->
+<!-- Daten & Render → js/news.js             ║ -->
+<!-- Zeigt immer die 3 aktuellsten Posts     ║ -->
 <!-- ╚═══════════════════════════════════════╝ -->
 <section id="news" aria-label="Aktuelle Neuigkeiten" style="background:var(--light-bg);">
   <div class="container">
@@ -208,61 +210,12 @@
         <p class="section-label">Aktuelles</p>
         <h2 class="section-title">Neuigkeiten aus dem Projekt</h2>
       </div>
-      <a href="/pages/coming-soon.html" class="btn-primary" style="margin-bottom:0.5rem;">Alle Beiträge</a>
+      <a href="/pages/blog.html" class="btn-primary" style="margin-bottom:0.5rem;">Alle Beiträge</a>
     </div>
     <div class="divider-accent reveal"></div>
 
-    <div class="news-grid">
+    <div class="news-grid" id="news-grid"></div>
 
-      <a href="/pages/coming-soon.html" class="news-card reveal" aria-label="Blogartikel: Projektstart">
-        <img
-          class="news-card-img"
-          src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=800&q=70"
-          alt="Projektteam beim Kickoff-Meeting"
-          loading="lazy"
-        />
-        <div class="news-card-body">
-          <span class="news-tag">Projektstart</span>
-          <h3>Offizieller Projektbeginn 01.01.2026: Die RekonKI-Partner starten in das Projekt</h3>
-          <p>Nach intensiver Vorbereitungsphase ist das Projekt offiziell gestartet. 
-             Das Team lernt sich am 03.02.2026 innerhalb eines Workshops kennen und erarbeitet die Projektplanung.</p>
-          <p class="news-date">05. Januar 2026</p>
-        </div>
-      </a>
-
-      <a href="/pages/coming-soon.html" class="news-card reveal" aria-label="Blogartikel: Forschung">
-        <img
-          class="news-card-img"
-          src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=70"
-          alt="Analyse von Forschungsdaten am Computer"
-          loading="lazy"
-        />
-        <div class="news-card-body">
-          <span class="news-tag">Forschung</span>
-          <h3>Anwendungsszenarien und Anforderungsdefinitionen werden identifiziert</h3>
-          <p>Im intensiven Austausch der Projektteilnehmer werden die Prozesse aufgenommen.
-             Der nächste Schritt ist die Erarbeitung der Anforderungen von den Projektpartnern.</p>
-          <p class="news-date">15. April 2026</p>
-        </div>
-      </a>
-
-      <a href="/pages/coming-soon.html" class="news-card reveal" aria-label="Blogartikel: Projekttreffen">
-        <img
-          class="news-card-img"
-          src="/pic/pic_gruppe.jpg"
-          alt="Gruppenfoto der Projektpartner"
-          loading="lazy"
-        />
-        <div class="news-card-body">
-          <span class="news-tag">Veranstaltung</span>
-          <h3>Projekttreffen am 26.05.2026 am Designcampus Pilnitz</h3>
-          <p>Am 26.05.2026 trafen sich die Projektpartner im Beisein des Projektträgers im Wasserpalais des Schlosses Pillnitz.
-            Es war das erste persönliche Kennenlernen aller Projektbeteiligten in perfekter Atmosphäre.</p>
-          <p class="news-date">26. Mai 2026</p>
-        </div>
-      </a>
-
-    </div><!-- /news-grid -->
   </div>
 </section>
 
@@ -295,6 +248,7 @@
 <!-- Scripts -->
 <script src="js/main.js"></script>
 <script src="js/partners.js"></script>
+<script src="js/news.js"></script>
 <script src="js/components.js"></script>
 
 </body>
