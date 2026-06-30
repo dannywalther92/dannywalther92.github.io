@@ -45,51 +45,13 @@
 <section>
   <div class="container">
     <div class="blog-grid">
-      <main>
-        <article class="blog-post reveal" id="post-1">
-          <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=900&q=70" alt="Kickoff-Meeting" loading="lazy" />
-          <div class="blog-post-body">
-            <span class="news-tag">Projektstart</span>
-            <p class="news-date" style="margin:0.5rem 0;">05. Januar 2026</p>
-            <h2>Offizieller Projektbeginn 01.01.2026: Die RekonKI-Partner starten in das Projekt</h2>
-            <p>Nach intensiver Vorbereitungsphase ist das Projekt offiziell gestartet. Das Team lernt sich am 03.02.2026 innerhalb eines Workshops kennen und erarbeitet die Projektplanung gemeinsam.</p>
-            <a href="coming-soon.html" class="read-more">Weiterlesen →</a>
-          </div>
-        </article>
-
-        <article class="blog-post reveal" id="post-2">
-          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=900&q=70" alt="Forschungsdaten" loading="lazy" />
-          <div class="blog-post-body">
-            <span class="news-tag">Forschung</span>
-            <p class="news-date" style="margin:0.5rem 0;">15. April 2026</p>
-            <h2>Anwendungsszenarien und Anforderungsdefinitionen werden identifiziert</h2>
-            <p>Im intensiven Austausch der Projektteilnehmer werden die Prozesse aufgenommen. Der nächste Schritt ist die Erarbeitung der Anforderungen von den Projektpartnern.</p>
-            <a href="coming-soon.html" class="read-more">Weiterlesen →</a>
-          </div>
-        </article>
-
-        <article class="blog-post reveal" id="post-3">
-          <img src="../pic/pic_gruppe.jpg" alt="Gruppenfoto Projekttreffen" loading="lazy" />
-          <div class="blog-post-body">
-            <span class="news-tag">Veranstaltung</span>
-            <p class="news-date" style="margin:0.5rem 0;">26. Mai 2026</p>
-            <h2>Projekttreffen am 26.05.2026 am Designcampus Pilnitz</h2>
-            <p>Am 26.05.2026 trafen sich die Projektpartner im Beisein des Projektträgers im Wasserpalais des Schlosses Pillnitz. Es war das erste persönliche Kennenlernen aller Projektbeteiligten in perfekter Atmosphäre.</p>
-            <a href="coming-soon.html" class="read-more">Weiterlesen →</a>
-          </div>
-        </article>
-      </main>
+      <!-- Daten & Render → js/news.js. Zeigt ALLE Posts, neueste zuerst. -->
+      <main id="blog-list"></main>
 
       <aside>
         <div class="sidebar-widget">
           <h3>Kategorien</h3>
-          <div class="tag-cloud">
-            <span class="tag">Projektstart</span>
-            <span class="tag">Forschung</span>
-            <span class="tag">Veranstaltung</span>
-            <span class="tag">KI</span>
-            <span class="tag">Kulturerbe</span>
-          </div>
+          <div class="tag-cloud" id="tag-cloud"></div>
         </div>
         <div class="sidebar-widget">
           <h3>Über das Projekt</h3>
@@ -110,7 +72,14 @@
 <!-- Scripts -->
 <script src="../js/main.js"></script>
 <script src="../js/partners.js"></script>
+<script src="../js/news.js"></script>
 <script src="../js/components.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderNewsList("blog-list");
+    renderNewsTags("tag-cloud");
+  });
+</script>
 
 </body>
 </html>
