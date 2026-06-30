@@ -121,8 +121,8 @@
 
   /* ─── Init ──────────────────────────────────────────────────────── */
   document.addEventListener("DOMContentLoaded", () => {
-    renderPartnerList("partner-list");
-    renderNewsTeaser("news-grid", 3);
+    if (typeof renderPartnerList === "function") renderPartnerList("partner-list");
+    if (typeof renderNewsTeaser === "function") renderNewsTeaser("news-grid", 3);
     buildNav();
     buildFooter();
   });
