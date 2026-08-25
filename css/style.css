@@ -160,6 +160,18 @@ body {
   mask-image: radial-gradient(ellipse at center, black 30%, transparent 80%);
 }
 
+#hero-network {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #hero-network { display: none; }
+}
+
 .hero-content {
   position: relative;
   z-index: 1;
