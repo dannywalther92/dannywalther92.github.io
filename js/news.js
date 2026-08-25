@@ -70,6 +70,25 @@ const NEWS = [
        Klärung der Zuständigkeiten sowie ein erster Zeitplan für die kommenden
        Arbeitspakete.`
     ]
+  },
+  {
+    slug: "Messe Denkmal Leipzig vom 05.-07.11.2026",
+    tag: "Messeauftritt",
+    title: "Projekt RekonKI auf der Denkmal 2026 in Leipzig",
+    date: "25.08.2026",
+    dateISO: "2026-08-25",
+    image: "https://www.denkmal-leipzig.de/files/denkmal/master/media/globale-medien/messe-logos/den/denkmal-2022-signet-dt-blanko-rot-rgb.jpg?w=900&q=70",
+    alt: "Das Projekt RekonKI stellt sich auf der Denkmal 2026 in Leipzig vor",
+    teaser: `Das Projekt RekonKI tritt offiziell als Aussteller auf der Denkmal 2026 in Leipzig auf.
+            Wir suchen nach Interessenten und Partnern für den Einsatz unseres KI Assistenzsystems 
+            im Denkmalschutz. Sie finden uns am Stand I47!`,
+    body: [
+      `Besuchen Sie uns auf unserem kleinen Ausstellerstand I47 und lernen Sie unser außergewöhnliches 
+      Projkt kennen: RekonKI - das KI Assistenzsystem im Denkmalschutz!`,
+      `Wir zeigen Ihnen den Prozess und Schwerpunkte bei der Entwicklung unserer Anwendung. Frühes 
+      Feedback zu unserer Anwednung und der verwendeten Technik ist uns sehr wichtig. Kommen Sie mit uns
+      ins Gespräch auf der Denkmal 2026 in Leipzig!`
+      ]
   }
 ];
 
