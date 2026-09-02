@@ -130,7 +130,7 @@
     const nachricht = document.getElementById('nachricht').value.trim();
 
     const body = `Name: ${vorname} ${nachname}\nE-Mail: ${email}\n\n${nachricht}`;
-    const mailto = `mailto:dwalther@sws-digital.de?subject=${encodeURIComponent('Kontaktanfrage: ' + betreff)}&body=${encodeURIComponent(body)}`;
+    const mailto = `mailto:info@sws-digital.de?subject=${encodeURIComponent('Kontaktanfrage: ' + betreff)}&body=${encodeURIComponent(body)}`;
     window.location.href = mailto;
   });
 </script>
