@@ -66,7 +66,7 @@
           </div>
           <div>
             <h4>Adresse</h4>
-            <p>Projekt REKONKI<br/>c/o TU Bergakademie Freiberg<br/>09599 Freiberg</p>
+            <p>Projekt RekonKI<br/>c/o Technische Universität Bergakademie Freiberg<br/>Akademiestraße 6<br/>09599 Freiberg</p>
           </div>
         </div>
       </div>
@@ -130,7 +130,7 @@
     const nachricht = document.getElementById('nachricht').value.trim();
 
     const body = `Name: ${vorname} ${nachname}\nE-Mail: ${email}\n\n${nachricht}`;
-    const mailto = `mailto:info@rekonki-projekt.de?subject=${encodeURIComponent('Kontaktanfrage: ' + betreff)}&body=${encodeURIComponent(body)}`;
+    const mailto = `mailto:dwalther@sws-digital.de?subject=${encodeURIComponent('Kontaktanfrage: ' + betreff)}&body=${encodeURIComponent(body)}`;
     window.location.href = mailto;
   });
 </script>
