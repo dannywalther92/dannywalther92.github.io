@@ -78,6 +78,9 @@ const NEWS = [
     date: "25.08.2026",
     dateISO: "2026-08-25",
     image: "https://www.denkmal-leipzig.de/files/denkmal/master/media/globale-medien/messe-logos/den/denkmal-2022-signet-dt-blanko-rot-rgb.jpg?w=900&q=70",
+    // Logo statt Foto: nicht zuschneiden/zoomen (cover), sondern komplett einpassen
+    imgFit: "contain",
+    imgBg: "#ffffff",
     alt: "Das Projekt RekonKI stellt sich auf der Denkmal 2026 in Leipzig vor",
     teaser: `Das Projekt RekonKI tritt offiziell als Aussteller auf der Denkmal 2026 in Leipzig auf.
             Wir suchen nach Interessenten und Partnern für den Einsatz unseres KI Assistenzsystems 
@@ -107,6 +110,21 @@ function getSortedNews() {
 /* ─── Render-Funktionen ───────────────────────────────────────────── */
 
 /**
+ * imgStyleAttr(n)
+ * Erzeugt optional ein style-Attribut, falls ein Beitrag ein abweichendes
+ * object-fit/Hintergrund braucht (z.B. Logos, die nicht zugeschnitten
+ * werden sollen). Ohne imgFit/imgBg greift einfach das Standard-CSS.
+ */
+function imgStyleAttr(n) {
+  if (!n.imgFit && !n.imgBg) return "";
+  const rules = [
+    n.imgFit ? `object-fit:${n.imgFit};` : "",
+    n.imgBg ? `background:${n.imgBg};` : ""
+  ].join("");
+  return `style="${rules}"`;
+}
+
+/**
  * renderNewsTeaser(containerId, count)
  * Kompakte Teaser-Kacheln für index.html (News-Feed-Sektion).
  * Zeigt immer die `count` aktuellsten Beiträge, neuestes Datum zuerst.
@@ -123,6 +141,7 @@ function renderNewsTeaser(containerId, count = 3) {
         src="${n.image}"
         alt="${n.alt}"
         loading="lazy"
+        ${imgStyleAttr(n)}
       />
       <div class="news-card-body">
         <span class="news-tag">${n.tag}</span>
@@ -144,7 +163,7 @@ function renderNewsList(containerId) {
 
   container.innerHTML = getSortedNews().map(n => `
     <article class="blog-post reveal" id="post-${n.slug}">
-      <img src="${n.image}" alt="${n.alt}" loading="lazy" />
+      <img src="${n.image}" alt="${n.alt}" loading="lazy" ${imgStyleAttr(n)} />
       <div class="blog-post-body">
         <span class="news-tag">${n.tag}</span>
         <p class="news-date" style="margin:0.5rem 0;">${n.date}</p>
