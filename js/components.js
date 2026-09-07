@@ -75,8 +75,7 @@
               <p class="footer-traeger-label">Gefördert durch</p>
               <div class="footer-traeger-logo">
                 <img src="/img/logo_BMFTR-ESF_DE_gefoerdert_mitHinweistext_2025_Web-Office.png"
-                     alt="Gefördert durch das Bundesministerium für Forschung, Technologie und Raumfahrt sowie den Europäischen Sozialfonds"
-                     style="max-width:100%; height:auto; object-fit:contain;" />
+                     alt="Gefördert durch das Bundesministerium für Forschung, Technologie und Raumfahrt sowie den Europäischen Sozialfonds" />
               </div>
             </div>
 
