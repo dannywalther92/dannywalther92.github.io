@@ -16,17 +16,11 @@ const PARTNERS = [
             und Material an der kompletten Wertschöpfungskette auseinander. 
             Rohstoffe werden erkundet und gewonnen, zu Materialien veredelt, 
             zu Werkstoffen verarbeitet und als Sekundärrohstoffe recycelt.`,
-    description: `Die TU Bergakademie Freiberg setzt sich in Lehre und Forschung 
-            mit den Grundlagen und den Prozessen rund um Rohstoffe, Energie 
-            und Material an der kompletten Wertschöpfungskette auseinander. 
-            Rohstoffe werden erkundet und gewonnen, zu Materialien veredelt, 
-            zu Werkstoffen verarbeitet und als Sekundärrohstoffe recycelt. 
-            Gerade aus dem Umgang mit historischer Substanz resultiert eine 
-            gezielte Problemanalyse, welche auch und gerade auf den normalen 
-            Sanierungsfall angewendet werden muss. Nur bei genauer Kenntnis 
-            der Umstände jedes Einzelfalles lässt sich die angestrebte 
-            Nachhaltigkeit einer Sanierung tatsächlich erreichen – aus 
-            konstruktiver, funktioneller, betriebstechnischer und finanzieller Sicht.`
+    description: `Die TU Bergakademie Freiberg setzt als ressourenorientierte technische Universität
+    in Lehre und Forschung mit den Prozessen um Rohstoffe, Energie und Material entlang der kompletten
+    Wertschöpfungskette auseinander. In diesem Verbundprojekt übernimmt die Professur für Angewandte
+    Mathematik der TUBAF die Projektkkoordination und bringt ihre Expertise in künstlicher Intelligenz 
+    und Datenverarbeitung ein.`
   },
   {
     name: "pons asini LINKE, DÄHNE & PARTNER RESTAURATOREN",
