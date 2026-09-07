@@ -599,18 +599,14 @@ footer {
 }
 
 .footer-traeger-logo {
-  width: 280px;
-  height: 140px;
-  background: rgba(255,255,255,0.05);
+  width: 300px;
+  background: var(--white);
   border: 1px solid rgba(217,204,196,0.15);
   border-radius: 4px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.7rem;
-  color: rgba(217,204,196,0.4);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
+  padding: 0.85rem 1.1rem;
   margin: 0 auto;
 }
 
