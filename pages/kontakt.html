@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Kontakt – Schreiben Sie dem REKONKI Projektteam." />
   <title>Kontakt – REKONKI</title>
+  <link rel="icon" type="image/png" href="/img/logo_v1.png" />
   <link rel="stylesheet" href="../css/style.css" />
   <style>
     .page-hero { background: linear-gradient(135deg, var(--teal) 0%, #2a4042 100%); padding: 5rem 0 4rem; text-align: center; }
@@ -73,7 +74,7 @@
 
       <div class="contact-form-wrap reveal">
         <h3>Nachricht senden</h3>
-        <form id="kontakt-form" novalidate>
+        <form id="kontakt-form">
           <div class="form-row">
             <div class="form-group">
               <label for="vorname">Vorname <span style="color:var(--terracotta)">*</span></label>
@@ -123,6 +124,10 @@
 <script>
   document.getElementById('kontakt-form').addEventListener('submit', function (e) {
     e.preventDefault();
+    if (!this.checkValidity()) {
+      this.reportValidity();
+      return;
+    }
     const vorname = document.getElementById('vorname').value.trim();
     const nachname = document.getElementById('nachname').value.trim();
     const email = document.getElementById('email').value.trim();

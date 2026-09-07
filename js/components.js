@@ -106,15 +106,40 @@
   }
 
   /* ─── Burger-Menü ───────────────────────────────────────────────── */
+  // Muss NACH dem Einfügen der Nav (buildNav) laufen, da #burger/#nav-links
+  // erst dann im DOM existieren. Ein main.js, das VOR components.js geladen
+  // wird, würde diese Elemente beim Start noch nicht finden – deshalb lebt
+  // die gesamte Burger-/Dropdown-Logik hier.
   function initBurger() {
-    const burger   = document.getElementById("burger");
-    const navLinks = document.getElementById("nav-links");
+    const burger    = document.getElementById("burger");
+    const navLinks  = document.getElementById("nav-links");
+    const dropdowns = document.querySelectorAll(".nav-dropdown");
     if (!burger || !navLinks) return;
 
     burger.addEventListener("click", () => {
       const open = navLinks.classList.toggle("open");
       burger.setAttribute("aria-label", open ? "Menü schließen" : "Menü öffnen");
       burger.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+
+    // Mobile: Tap auf "Über uns" / "Aktuelles" klappt das Untermenü auf,
+    // statt dem href="#" zu folgen.
+    dropdowns.forEach(dd => {
+      const link = dd.querySelector("a");
+      link.addEventListener("click", e => {
+        if (window.innerWidth <= 768) {
+          e.preventDefault();
+          dd.classList.toggle("open");
+        }
+      });
+    });
+
+    // Menü schließen, wenn außerhalb geklickt wird
+    document.addEventListener("click", e => {
+      if (!e.target.closest("#main-nav")) {
+        navLinks.classList.remove("open");
+        dropdowns.forEach(d => d.classList.remove("open"));
+      }
     });
   }
 
