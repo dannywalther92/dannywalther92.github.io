@@ -1,34 +1,3 @@
-// ── BURGER / MOBILE NAV ──────────────────────────────────────────────────
-const burger = document.getElementById('burger');
-const navLinks = document.getElementById('nav-links');
-const dropdowns = document.querySelectorAll('.nav-dropdown');
-
-if (burger && navLinks) {
-  burger.addEventListener('click', () => {
-    navLinks.classList.toggle('open');
-  });
-}
-
-// Mobile: tap dropdown to expand
-dropdowns.forEach(dd => {
-  const link = dd.querySelector('a');
-  link.addEventListener('click', e => {
-    if (window.innerWidth <= 768) {
-      e.preventDefault();
-      dd.classList.toggle('open');
-    }
-  });
-});
-
-// Close nav when clicking outside
-document.addEventListener('click', e => {
-  if (!e.target.closest('#main-nav')) {
-    navLinks?.classList.remove('open');
-    dropdowns.forEach(d => d.classList.remove('open'));
-  }
-});
-
-
 // ── CAROUSEL ─────────────────────────────────────────────────────────────
 const track = document.getElementById('carousel-track');
 const dots = document.querySelectorAll('.dot');
