@@ -1,9 +1,10 @@
 // ── HERO: heilender Gewebefaden ─────────────────────────────────────────
 // Symbolisiert die Kernidee des Projekts: ein einzelner, welliger Faden
-// schwingt im mittleren Drittel der Hero-Breite. Einzelne Stücke des
-// Fadens sind gerissen ("missing"); sie fügen sich nacheinander farblich
-// zusammen (Sand → Gold), bleiben eine Weile verbunden und reißen danach
-// an anderer Stelle wieder auf – ein endloser Rekonstruktionszyklus.
+// verläuft über die Hero-Breite und schwingt vertikal im mittleren
+// Drittel der Hero-Höhe. Einzelne Stücke des Fadens sind gerissen
+// ("missing"); sie fügen sich nacheinander farblich zusammen
+// (Sand → Gold), bleiben eine Weile verbunden und reißen danach an
+// anderer Stelle wieder auf – ein endloser Rekonstruktionszyklus.
 // Läuft nur, solange der Hero sichtbar ist, und respektiert
 // prefers-reduced-motion.
 
@@ -18,13 +19,13 @@
   const SAND_RGB = [217, 204, 196];
   const GOLD_RGB = [233, 167, 83];
 
-  const BAND_FRACTION = 1 / 3;   // Faden bewegt sich im mittleren Drittel der Breite
+  const BAND_FRACTION = 1 / 3;   // Faden schwingt im mittleren Drittel der Höhe
   const MISSING_RATIO = 0.4;     // Anteil der Fadenstücke, die initial getrennt sind
 
   let width, height, dpr;
   let points = [];
   let links = [];
-  let bandCenterX = 0;
+  let bandCenterY = 0;
   let bandAmp = 0;
   let running = false;
   let rafId = null;
@@ -53,18 +54,18 @@
   }
 
   function seedThread() {
-    const count = Math.min(18, Math.max(9, Math.round(height / 65)));
-    const marginY = height * 0.1;
-    const usableH = height - marginY * 2;
-    bandCenterX = width / 2;
-    bandAmp = Math.min(width * BAND_FRACTION * 0.5 * 0.85, 70);
+    const count = Math.min(18, Math.max(9, Math.round(width / 90)));
+    const marginX = width * 0.08;
+    const usableW = width - marginX * 2;
+    bandCenterY = height / 2;
+    bandAmp = Math.min(height * BAND_FRACTION * 0.5 * 0.85, 70);
 
     points = [];
     for (let i = 0; i < count; i++) {
       points.push({
-        homeY: marginY + (usableH * i) / (count - 1),
-        x: bandCenterX,
-        y: 0,
+        homeX: marginX + (usableW * i) / (count - 1),
+        x: 0,
+        y: bandCenterY,
         phase: i * 0.55 + Math.random() * 0.4,
         ampScale: 0.75 + Math.random() * 0.3,
         speed: 0.85 + Math.random() * 0.3,
@@ -185,8 +186,8 @@
     for (const p of points) {
       const wave = Math.sin(now * 0.00042 * p.speed + p.phase) * bandAmp * p.ampScale;
       const wobble = Math.sin(now * 0.0011 + p.jitterPhase) * bandAmp * 0.06;
-      p.x = bandCenterX + wave + wobble;
-      p.y = p.homeY + Math.sin(now * 0.00015 + p.jitterPhase) * 5;
+      p.y = bandCenterY + wave + wobble;
+      p.x = p.homeX + Math.sin(now * 0.00015 + p.jitterPhase) * 5;
     }
 
     const total = links.length;
