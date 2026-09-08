@@ -1,10 +1,11 @@
-// ── HERO: heilendes Struktur-Gitter ─────────────────────────────────────
-// Symbolisiert die Kernidee des Projekts: aus einer beschädigten Struktur
-// (Molekülgitter / Gewebe) fehlen einzelne Verbindungen. Diese "Bindungen"
-// heilen nacheinander farblich zu (Sand → Gold), bleiben eine Weile intakt
-// und brechen danach an anderer Stelle wieder auf – ein endloser
-// Rekonstruktionszyklus. Läuft nur, solange der Hero sichtbar ist, und
-// respektiert prefers-reduced-motion.
+// ── HERO: heilender Gewebefaden ─────────────────────────────────────────
+// Symbolisiert die Kernidee des Projekts: ein einzelner, welliger Faden
+// schwingt im mittleren Drittel der Hero-Breite. Einzelne Stücke des
+// Fadens sind gerissen ("missing"); sie fügen sich nacheinander farblich
+// zusammen (Sand → Gold), bleiben eine Weile verbunden und reißen danach
+// an anderer Stelle wieder auf – ein endloser Rekonstruktionszyklus.
+// Läuft nur, solange der Hero sichtbar ist, und respektiert
+// prefers-reduced-motion.
 
 (() => {
   const canvas = document.getElementById('hero-network');
@@ -16,23 +17,17 @@
 
   const SAND_RGB = [217, 204, 196];
   const GOLD_RGB = [233, 167, 83];
-  const DOT_COLOR = 'rgba(233, 167, 83, 0.5)';
 
-  const MISSING_RATIO = 0.32;       // Anteil der Bindungen, die initial "beschädigt" sind
-  const JITTER_FACTOR = 0.16;       // Unregelmäßigkeit der Gitterpositionen
-  const WOBBLE_FACTOR = 0.22;       // Amplitude der leichten Eigenbewegung
+  const BAND_FRACTION = 1 / 3;   // Faden bewegt sich im mittleren Drittel der Breite
+  const MISSING_RATIO = 0.4;     // Anteil der Fadenstücke, die initial getrennt sind
 
   let width, height, dpr;
   let points = [];
-  let edges = [];
-  let gridSpacing = 0;
+  let links = [];
+  let bandCenterX = 0;
+  let bandAmp = 0;
   let running = false;
   let rafId = null;
-
-  function targetPointCount() {
-    const area = width * height;
-    return Math.min(90, Math.max(28, Math.round(area / 18000)));
-  }
 
   function lerp(a, b, t) {
     return a + (b - a) * t;
@@ -54,145 +49,152 @@
     canvas.style.width = width + 'px';
     canvas.style.height = height + 'px';
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    seedGrid();
+    seedThread();
   }
 
-  function seedGrid() {
-    const desired = targetPointCount();
-    gridSpacing = Math.sqrt((width * height) / (desired * 0.866));
-    const spacingY = gridSpacing * 0.866;
-    const jitter = gridSpacing * JITTER_FACTOR;
+  function seedThread() {
+    const count = Math.min(18, Math.max(9, Math.round(height / 65)));
+    const marginY = height * 0.1;
+    const usableH = height - marginY * 2;
+    bandCenterX = width / 2;
+    bandAmp = Math.min(width * BAND_FRACTION * 0.5 * 0.85, 70);
 
     points = [];
-    let row = 0;
-    for (let y = -spacingY / 2; y < height + spacingY; y += spacingY, row++) {
-      const offsetX = row % 2 === 0 ? 0 : gridSpacing / 2;
-      for (let x = -gridSpacing / 2 + offsetX; x < width + gridSpacing; x += gridSpacing) {
-        const gx = x + (Math.random() - 0.5) * jitter;
-        const gy = y + (Math.random() - 0.5) * jitter;
-        points.push({
-          gx, gy,
-          x: gx, y: gy,
-          phase: Math.random() * Math.PI * 2,
-          speed: 0.25 + Math.random() * 0.2,
-          amp: gridSpacing * WOBBLE_FACTOR * 0.5,
-          r: Math.random() * 1.3 + 0.9,
-        });
-      }
+    for (let i = 0; i < count; i++) {
+      points.push({
+        homeY: marginY + (usableH * i) / (count - 1),
+        x: bandCenterX,
+        y: 0,
+        phase: i * 0.55 + Math.random() * 0.4,
+        ampScale: 0.75 + Math.random() * 0.3,
+        speed: 0.85 + Math.random() * 0.3,
+        jitterPhase: Math.random() * Math.PI * 2,
+      });
     }
-    buildEdges();
+    buildLinks();
   }
 
-  function buildEdges() {
+  function buildLinks() {
     const now = performance.now();
-    const threshold = gridSpacing * 1.05;
-    edges = [];
-    for (let i = 0; i < points.length; i++) {
-      for (let j = i + 1; j < points.length; j++) {
-        const dx = points[i].gx - points[j].gx;
-        const dy = points[i].gy - points[j].gy;
-        const dist = Math.sqrt(dx * dx + dy * dy);
-        if (dist < threshold) {
-          const missing = Math.random() < MISSING_RATIO;
-          edges.push({
-            a: i,
-            b: j,
-            state: missing ? 'missing' : 'intact',
-            progress: 0,
-            healDuration: 1400 + Math.random() * 900,
-            settleDuration: 900 + Math.random() * 500,
-            phaseStart: now,
-            nextEventAt: now + (missing
-              ? 400 + Math.random() * 9000
-              : 8000 + Math.random() * 12000),
-          });
-        }
-      }
+    links = [];
+    for (let i = 0; i < points.length - 1; i++) {
+      const missing = Math.random() < MISSING_RATIO;
+      links.push({
+        a: i,
+        b: i + 1,
+        state: missing ? 'missing' : 'intact',
+        progress: 0,
+        healDuration: 1500 + Math.random() * 1000,
+        settleDuration: 900 + Math.random() * 500,
+        phaseStart: now,
+        nextEventAt: now + (missing
+          ? 400 + Math.random() * 9000
+          : 7000 + Math.random() * 11000),
+      });
     }
   }
 
-  function updateEdge(edge, now) {
-    switch (edge.state) {
+  function updateLink(link, now) {
+    switch (link.state) {
       case 'missing':
-        if (now >= edge.nextEventAt) {
-          edge.state = 'healing';
-          edge.phaseStart = now;
+        if (now >= link.nextEventAt) {
+          link.state = 'healing';
+          link.phaseStart = now;
         }
         break;
       case 'healing':
-        edge.progress = Math.min(1, (now - edge.phaseStart) / edge.healDuration);
-        if (edge.progress >= 1) {
-          edge.state = 'settling';
-          edge.phaseStart = now;
-          edge.progress = 0;
+        link.progress = Math.min(1, (now - link.phaseStart) / link.healDuration);
+        if (link.progress >= 1) {
+          link.state = 'settling';
+          link.phaseStart = now;
+          link.progress = 0;
         }
         break;
       case 'settling':
-        edge.progress = Math.min(1, (now - edge.phaseStart) / edge.settleDuration);
-        if (edge.progress >= 1) {
-          edge.state = 'intact';
-          edge.nextEventAt = now + 9000 + Math.random() * 12000;
+        link.progress = Math.min(1, (now - link.phaseStart) / link.settleDuration);
+        if (link.progress >= 1) {
+          link.state = 'intact';
+          link.nextEventAt = now + 7000 + Math.random() * 11000;
         }
         break;
       case 'intact':
-        if (now >= edge.nextEventAt) {
-          edge.state = 'missing';
-          edge.nextEventAt = now + 1500 + Math.random() * 5000;
+        if (now >= link.nextEventAt) {
+          link.state = 'missing';
+          link.nextEventAt = now + 400 + Math.random() * 6000;
         }
         break;
     }
   }
 
-  function drawEdge(edge) {
-    const a = points[edge.a];
-    const b = points[edge.b];
+  function catmullRom(p0, p1, p2, p3) {
+    return {
+      cp1x: p1.x + (p2.x - p0.x) / 6,
+      cp1y: p1.y + (p2.y - p0.y) / 6,
+      cp2x: p2.x - (p3.x - p1.x) / 6,
+      cp2y: p2.y - (p3.y - p1.y) / 6,
+    };
+  }
 
-    if (edge.state === 'missing') {
+  function drawLink(link, index, total) {
+    const p0 = points[Math.max(0, link.a - 1)];
+    const p1 = points[link.a];
+    const p2 = points[link.b];
+    const p3 = points[Math.min(points.length - 1, link.b + 1)];
+    const { cp1x, cp1y, cp2x, cp2y } = catmullRom(p0, p1, p2, p3);
+    const taper = 1 - Math.min(1, Math.abs(index - (total - 1) / 2) / ((total - 1) / 2)) * 0.35;
+
+    if (link.state === 'missing') {
       ctx.setLineDash([2, 5]);
       ctx.strokeStyle = 'rgba(217, 204, 196, 1)';
-      ctx.globalAlpha = 0.05;
-      ctx.lineWidth = 0.75;
+      ctx.globalAlpha = 0.06;
+      ctx.lineWidth = 0.9 * taper;
       ctx.beginPath();
-      ctx.moveTo(a.x, a.y);
-      ctx.lineTo(b.x, b.y);
+      ctx.moveTo(p1.x, p1.y);
+      ctx.bezierCurveTo(cp1x, cp1y, cp2x, cp2y, p2.x, p2.y);
       ctx.stroke();
       ctx.setLineDash([]);
       return;
     }
 
     let energy = 0;
-    if (edge.state === 'healing') energy = edge.progress;
-    else if (edge.state === 'settling') energy = 1 - edge.progress;
+    if (link.state === 'healing') energy = link.progress;
+    else if (link.state === 'settling') energy = 1 - link.progress;
 
     ctx.strokeStyle = mixColor(energy);
-    ctx.globalAlpha = 0.13 + energy * 0.45;
-    ctx.lineWidth = 1 + energy * 0.6;
+    ctx.globalAlpha = 0.22 + energy * 0.5;
+    ctx.lineWidth = (1.3 + energy * 0.9) * taper;
     ctx.beginPath();
-    ctx.moveTo(a.x, a.y);
-    ctx.lineTo(b.x, b.y);
+    ctx.moveTo(p1.x, p1.y);
+    ctx.bezierCurveTo(cp1x, cp1y, cp2x, cp2y, p2.x, p2.y);
     ctx.stroke();
+
+    if (link.state === 'healing') {
+      const midX = (p1.x + p2.x) / 2;
+      const midY = (p1.y + p2.y) / 2;
+      ctx.globalAlpha = energy * 0.85;
+      ctx.fillStyle = mixColor(1);
+      ctx.beginPath();
+      ctx.arc(midX, midY, 1.5 + energy * 2.5, 0, Math.PI * 2);
+      ctx.fill();
+    }
   }
 
   function step(now) {
     ctx.clearRect(0, 0, width, height);
 
     for (const p of points) {
-      p.x = p.gx + Math.cos(now * 0.0006 * p.speed + p.phase) * p.amp;
-      p.y = p.gy + Math.sin(now * 0.0006 * p.speed * 1.3 + p.phase) * p.amp;
+      const wave = Math.sin(now * 0.00042 * p.speed + p.phase) * bandAmp * p.ampScale;
+      const wobble = Math.sin(now * 0.0011 + p.jitterPhase) * bandAmp * 0.06;
+      p.x = bandCenterX + wave + wobble;
+      p.y = p.homeY + Math.sin(now * 0.00015 + p.jitterPhase) * 5;
     }
 
-    for (const edge of edges) {
-      updateEdge(edge, now);
-      drawEdge(edge);
-    }
+    const total = links.length;
+    links.forEach((link, i) => {
+      updateLink(link, now);
+      drawLink(link, i, total);
+    });
     ctx.globalAlpha = 1;
-
-    ctx.fillStyle = DOT_COLOR;
-    for (const p of points) {
-      ctx.beginPath();
-      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-      ctx.fill();
-    }
 
     if (running) rafId = requestAnimationFrame(step);
   }
