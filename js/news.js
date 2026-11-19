@@ -78,9 +78,6 @@ const NEWS = [
     date: "25.08.2026",
     dateISO: "2026-08-25",
     image: "https://www.denkmal-leipzig.de/files/denkmal/master/media/globale-medien/messe-logos/den/denkmal-2022-signet-dt-blanko-rot-rgb.jpg?w=900&q=70",
-    // Logo statt Foto: nicht zuschneiden/zoomen (cover), sondern komplett einpassen
-    imgFit: "contain",
-    imgBg: "#ffffff",
     alt: "Das Projekt RekonKI stellt sich auf der Denkmal 2026 in Leipzig vor",
     teaser: `Das Projekt RekonKI tritt offiziell als Aussteller auf der Denkmal 2026 in Leipzig auf.
             Wir suchen nach Interessenten und Partnern für den Einsatz unseres KI Assistenzsystems 
