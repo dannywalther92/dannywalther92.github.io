@@ -92,7 +92,29 @@ const NEWS = [
       Feedback zu unserer Anwednung und der verwendeten Technik ist uns sehr wichtig. Kommen Sie mit uns
       ins Gespräch auf der Denkmal 2026 in Leipzig!`
       ]
-  }
+  },
+  {
+    slug: "Projekt RekonKI auf der Denkmal 2026 in Leipzig",
+    tag: "Messeauftritt",
+    title: "Projekt RekonKI auf der Denkmal 2026 in Leipzig",
+    date: "10.11.2026",
+    dateISO: "2026-11-10",
+    image: "/pic/pic_messe2026.png",
+    // Logo statt Foto: nicht zuschneiden/zoomen (cover), sondern komplett einpassen
+    imgFit: "contain",
+    imgBg: "#ffffff",
+    alt: "Bild von dem Messestand in Leipzig",
+    teaser: `Viele tolle Einblicke, Gedanken und Kontakte konnten wir auf der Denkmal 2026 in Leipzig
+            für unser Projekt gewinnen!`,
+    body: [
+      `Die Messe in Leipzig hat uns gezeigt, dass das Interesse an künstlicher Intelligenz im
+        Denkmalschutz bereits große Aufmerksamkeit genießt und es zahlreiche Anwendungsfelder
+        zu entdecken gibt.`,
+      `Unser Fokus lag vor allem auf dem Austasuch mit Anwendern aus dem Handwerk, aber auch mit 
+        Experten für Scanner und die Verarbeitung von Bildmaterial. Vielen Dank an des RekonKI Team für
+        die Zeit, die ihr am Messestand verbracht habt und der geschlossenen Euphorie.`
+      ]
+    }
 ];
 
 /* ─── Sortierung ──────────────────────────────────────────────────── */
