@@ -100,9 +100,6 @@ const NEWS = [
     date: "10.11.2026",
     dateISO: "2026-11-10",
     image: "/pic/pic_messe2026.png",
-    // Logo statt Foto: nicht zuschneiden/zoomen (cover), sondern komplett einpassen
-    imgFit: "contain",
-    imgBg: "#ffffff",
     alt: "Bild von dem Messestand in Leipzig",
     teaser: `Viele tolle Einblicke, Gedanken und Kontakte konnten wir auf der Denkmal 2026 in Leipzig
             für unser Projekt gewinnen!`,
